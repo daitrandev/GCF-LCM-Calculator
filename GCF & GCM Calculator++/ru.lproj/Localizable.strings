@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  GCF & GCM Calculator++
+
+  Created by Dai Tran on 10/30/17.
+  Copyright © 2017 DaiTranDev. All rights reserved.
+*/
+"Input" = "Ввода";
+"GCF" = "НОД";
+"LCM" = "НОК";
+"InputPlaceHolder" = "разделенные пробелами или запятыми";
+"GCFPlaceHolder" = "Hаибольший общий делить";
+"LCMPlaceHolder" = "Hаименьшее общее кратное";
+"Home" = "Главная страница";
+"Theme" = "тема";
+"Feedback" = "Обратная связь";
+"Rate" = "Oценивать";
+"Share" = "Поделиться";

@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  GCF & GCM Calculator++
+
+  Created by Dai Tran on 10/30/17.
+  Copyright © 2017 DaiTranDev. All rights reserved.
+*/
+"Input" = "入力";
+"GCF" = "GCF ";
+"LCM" = "LCM";
+"InputPlaceHolder" = "スペースまたはコンマで区切られた";
+"GCFPlaceHolder" = "最大公約数";
+"LCMPlaceHolder" = "最小公倍数";
+"Home" = "ホームページ";
+"Theme" = "テーマ";
+"Feedback" = "フィードバック";
+"Rate" = "評価する";
+"Share" = "分け合う";

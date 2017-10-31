@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  GCF & GCM Calculator++
+
+  Created by Dai Tran on 10/30/17.
+  Copyright © 2017 DaiTranDev. All rights reserved.
+*/
+"Input" = "ENTRADA";
+"GCF" = "MCD";
+"LCM" = "MCM";
+"InputPlaceHolder" = "Enteros separados por espacios o comas";
+"GCFPlaceHolder" = "Máximo común divisor";
+"LCMPlaceHolder" = "Mínimo común múltiplo";
+"Home" = "Página de inicio";
+"Theme" = "Tema";
+"Feedback" = "Feedback";
+"Rate" = "Evaluar";
+"Share" = "Compartir";

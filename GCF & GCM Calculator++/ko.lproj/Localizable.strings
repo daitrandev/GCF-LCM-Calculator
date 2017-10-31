@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  GCF & GCM Calculator++
+
+  Created by Dai Tran on 10/30/17.
+  Copyright © 2017 DaiTranDev. All rights reserved.
+*/
+"Input" = "입력";
+"GCF" = "GCF";
+"LCM" = "LCM";
+"InputPlaceHolder" = "공백이 나 쉼표로 구분";
+"GCFPlaceHolder" = "최대공약수";
+"LCMPlaceHolder" = "최소공배수";
+"Home" = "홈페이지";
+"Theme" = "테마";
+"Feedback" = "피드백";
+"Rate" = "평가하다";
+"Share" = "나누다";
