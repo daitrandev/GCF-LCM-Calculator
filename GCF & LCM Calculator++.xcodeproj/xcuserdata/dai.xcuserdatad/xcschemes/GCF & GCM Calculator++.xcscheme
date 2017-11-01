@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "232A8B511FA6C5E700A76143"
-               BuildableName = "GCF &amp; GCM Calculator++.app"
-               BlueprintName = "GCF &amp; GCM Calculator++"
-               ReferencedContainer = "container:GCF &amp; GCM Calculator++.xcodeproj">
+               BuildableName = "GCF &amp; LCM Calculator++.app"
+               BlueprintName = "GCF &amp; LCM Calculator++"
+               ReferencedContainer = "container:GCF &amp; LCM Calculator++.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "232A8B511FA6C5E700A76143"
-            BuildableName = "GCF &amp; GCM Calculator++.app"
-            BlueprintName = "GCF &amp; GCM Calculator++"
-            ReferencedContainer = "container:GCF &amp; GCM Calculator++.xcodeproj">
+            BuildableName = "GCF &amp; LCM Calculator++.app"
+            BlueprintName = "GCF &amp; LCM Calculator++"
+            ReferencedContainer = "container:GCF &amp; LCM Calculator++.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "232A8B511FA6C5E700A76143"
-            BuildableName = "GCF &amp; GCM Calculator++.app"
-            BlueprintName = "GCF &amp; GCM Calculator++"
-            ReferencedContainer = "container:GCF &amp; GCM Calculator++.xcodeproj">
+            BuildableName = "GCF &amp; LCM Calculator++.app"
+            BlueprintName = "GCF &amp; LCM Calculator++"
+            ReferencedContainer = "container:GCF &amp; LCM Calculator++.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "232A8B511FA6C5E700A76143"
-            BuildableName = "GCF &amp; GCM Calculator++.app"
-            BlueprintName = "GCF &amp; GCM Calculator++"
-            ReferencedContainer = "container:GCF &amp; GCM Calculator++.xcodeproj">
+            BuildableName = "GCF &amp; LCM Calculator++.app"
+            BlueprintName = "GCF &amp; LCM Calculator++"
+            ReferencedContainer = "container:GCF &amp; LCM Calculator++.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

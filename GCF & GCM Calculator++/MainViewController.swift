@@ -66,11 +66,6 @@ class MainViewController: UIViewController {
         
         loadColor()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        let alert = createAlert(title: NSLocalizedString("Appname", comment: ""), message: NSLocalizedString("UpgradeMessage", comment: ""))
-        present(alert, animated: true, completion: nil)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -259,5 +254,10 @@ extension MainViewController : GADInterstitialDelegate {
     
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
         ad.present(fromRootViewController: self)
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        let alert = createAlert(title: NSLocalizedString("Appname", comment: ""), message: NSLocalizedString("UpgradeMessage", comment: ""))
+        present(alert, animated: true, completion: nil)
     }
 }

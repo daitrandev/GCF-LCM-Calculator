@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		232A8B521FA6C5E700A76143 /* GCF & GCM Calculator++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GCF & GCM Calculator++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		232A8B521FA6C5E700A76143 /* GCF & LCM Calculator++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GCF & LCM Calculator++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		232A8B551FA6C5E700A76143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		232A8B5C1FA6C5E700A76143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		232A8B611FA6C5E700A76143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		232A8B531FA6C5E700A76143 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				232A8B521FA6C5E700A76143 /* GCF & GCM Calculator++.app */,
+				232A8B521FA6C5E700A76143 /* GCF & LCM Calculator++.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		232A8B511FA6C5E700A76143 /* GCF & GCM Calculator++ */ = {
+		232A8B511FA6C5E700A76143 /* GCF & LCM Calculator++ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 232A8B641FA6C5E700A76143 /* Build configuration list for PBXNativeTarget "GCF & GCM Calculator++" */;
+			buildConfigurationList = 232A8B641FA6C5E700A76143 /* Build configuration list for PBXNativeTarget "GCF & LCM Calculator++" */;
 			buildPhases = (
 				232A8B4E1FA6C5E700A76143 /* Sources */,
 				232A8B4F1FA6C5E700A76143 /* Frameworks */,
@@ -152,9 +152,9 @@
 			);
 			dependencies = (
 			);
-			name = "GCF & GCM Calculator++";
+			name = "GCF & LCM Calculator++";
 			productName = "GCF & GCM Calculator++";
-			productReference = 232A8B521FA6C5E700A76143 /* GCF & GCM Calculator++.app */;
+			productReference = 232A8B521FA6C5E700A76143 /* GCF & LCM Calculator++.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +175,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 232A8B4D1FA6C5E700A76143 /* Build configuration list for PBXProject "GCF & GCM Calculator++" */;
+			buildConfigurationList = 232A8B4D1FA6C5E700A76143 /* Build configuration list for PBXProject "GCF & LCM Calculator++" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -200,7 +200,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				232A8B511FA6C5E700A76143 /* GCF & GCM Calculator++ */,
+				232A8B511FA6C5E700A76143 /* GCF & LCM Calculator++ */,
 			);
 		};
 /* End PBXProject section */
@@ -453,7 +453,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		232A8B4D1FA6C5E700A76143 /* Build configuration list for PBXProject "GCF & GCM Calculator++" */ = {
+		232A8B4D1FA6C5E700A76143 /* Build configuration list for PBXProject "GCF & LCM Calculator++" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				232A8B621FA6C5E700A76143 /* Debug */,
@@ -462,7 +462,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		232A8B641FA6C5E700A76143 /* Build configuration list for PBXNativeTarget "GCF & GCM Calculator++" */ = {
+		232A8B641FA6C5E700A76143 /* Build configuration list for PBXNativeTarget "GCF & LCM Calculator++" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				232A8B651FA6C5E700A76143 /* Debug */,
