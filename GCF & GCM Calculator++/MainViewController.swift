@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class MainViewController: UIViewController {
 
@@ -32,8 +33,26 @@ class MainViewController: UIViewController {
     
     let keyboardAppearance: [UIKeyboardAppearance] = [UIKeyboardAppearance.light, UIKeyboardAppearance.dark]
     
+    var bannerView: GADBannerView!
+    
+    var interstitial: GADInterstitial?
+    
+    var freeVersion: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (freeVersion) {
+            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+            
+            bannerView.adUnitID = "ca-app-pub-7005013141953077/2670035887"
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            bannerView.delegate = self
+            
+            interstitial = createAndLoadInterstitial()
+        }
+        
         // Do any additional setup after loading the view.
         
         tableView.dataSource = self
@@ -47,6 +66,11 @@ class MainViewController: UIViewController {
         
         loadColor()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let alert = createAlert(title: NSLocalizedString("Appname", comment: ""), message: NSLocalizedString("UpgradeMessage", comment: ""))
+        present(alert, animated: true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,7 +78,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func textFieldEditingChanged(_ sender: UITextField) {
-        if (!sender.text!.characters.contains(",") && !sender.text!.characters.contains(" ")) {
+        if (!sender.text!.contains(",") && !sender.text!.contains(" ")) {
             seperateString = ""
         }
         
@@ -132,8 +156,8 @@ extension MainViewController: UITextFieldDelegate {
             return false
         }
         
-        for character in string.characters {
-            if (!allowingCharacters.characters.contains(character)) {
+        for character in string {
+            if (!allowingCharacters.contains(character)) {
                 return false
             }
         }
@@ -144,6 +168,28 @@ extension MainViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
+        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
+            completion(false)
+            return
+        }
+        guard #available(iOS 10, *) else {
+            completion(UIApplication.shared.openURL(url))
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: completion)
+    }
+    
+    func createAlert(title: String, message: String) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Upgarde", comment: ""), style: .default, handler: { (action) in
+            self.rateApp(appId: "id1304954640", completion: { print("Rate app status: \($0)")})
+        }))
+        
+        return alert
     }
 }
 
@@ -170,5 +216,48 @@ extension MainViewController: HomeViewControllerDelegate {
         }
         
         tableView.reloadData()
+    }
+}
+
+extension MainViewController : GADBannerViewDelegate {
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("Banner loaded successfully")
+        
+        // Reposition the banner ad to create a slide down effect
+        let translateTransform = CGAffineTransform(translationX: 0, y: -bannerView.bounds.size.height)
+        bannerView.transform = translateTransform
+        
+        UIView.animate(withDuration: 0.5) {
+            self.tableView.tableHeaderView?.frame = bannerView.frame
+            bannerView.transform = CGAffineTransform.identity
+            self.tableView.tableHeaderView = bannerView
+        }
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print("Fail to receive ads")
+        print(error)
+    }
+}
+
+extension MainViewController : GADInterstitialDelegate {
+    private func createAndLoadInterstitial() -> GADInterstitial? {
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7005013141953077/6898368584")
+        
+        guard let interstitial = interstitial else {
+            return nil
+        }
+        
+        let request = GADRequest()
+        // Remove the following line before you upload the app
+        request.testDevices = [ kGADSimulatorID ]
+        interstitial.load(request)
+        interstitial.delegate = self
+        
+        return interstitial
+    }
+    
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        ad.present(fromRootViewController: self)
     }
 }

@@ -14,6 +14,7 @@
 		232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */; };
 		23C135471FA86B6400659196 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C135451FA86B6400659196 /* LaunchScreen.storyboard */; };
 		23C1354A1FA86B9E00659196 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C135481FA86B9E00659196 /* Main.storyboard */; };
+		23D6D8A81FA9B93B00243F5D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D6D8A71FA9B93B00243F5D /* GoogleMobileAds.framework */; };
 		23E9140F1FA7035E00F79C0E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E9140E1FA7035E00F79C0E /* HomeViewController.swift */; };
 		23E914141FA714D200F79C0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E914161FA714D200F79C0E /* InfoPlist.strings */; };
 		23E914171FA714D700F79C0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E914191FA714D700F79C0E /* Localizable.strings */; };
@@ -57,6 +58,11 @@
 		23C135491FA86B9E00659196 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		23C2D5111FA7377900089C8F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "GCF & GCM Calculator++/fr.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		23C2D5121FA7377900089C8F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = "GCF & GCM Calculator++/fr.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		23D6D8A31FA9B3FD00243F5D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "GCF & GCM Calculator++/zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		23D6D8A41FA9B3FD00243F5D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "GCF & GCM Calculator++/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		23D6D8A51FA9B40300243F5D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "GCF & GCM Calculator++/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		23D6D8A61FA9B40300243F5D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "GCF & GCM Calculator++/zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		23D6D8A71FA9B93B00243F5D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		23E9140E1FA7035E00F79C0E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		23E9145A1FA7248600F79C0E /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		23E9145B1FA7248600F79C0E /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23D6D8A81FA9B93B00243F5D /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +92,7 @@
 				23E914591FA7248600F79C0E /* TPKeyboardAvoiding */,
 				232A8B541FA6C5E700A76143 /* GCF & GCM Calculator++ */,
 				232A8B531FA6C5E700A76143 /* Products */,
+				23D6D8A71FA9B93B00243F5D /* GoogleMobileAds.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +192,8 @@
 				ru,
 				es,
 				vi,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 232A8B491FA6C5E700A76143;
 			productRefGroup = 232A8B531FA6C5E700A76143 /* Products */;
@@ -261,6 +271,8 @@
 				23C1352A1FA8692F00659196 /* es */,
 				23C1352B1FA8693100659196 /* vi */,
 				23C135431FA86B2D00659196 /* Base */,
+				23D6D8A41FA9B3FD00243F5D /* zh-Hans */,
+				23D6D8A61FA9B40300243F5D /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			path = ..;
@@ -281,6 +293,8 @@
 				23C135331FA8696400659196 /* it */,
 				23C135341FA8696600659196 /* id */,
 				23C135441FA86B3300659196 /* Base */,
+				23D6D8A31FA9B3FD00243F5D /* zh-Hans */,
+				23D6D8A51FA9B40300243F5D /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			path = ..;
@@ -403,6 +417,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B8SW848K42;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "GCF & GCM Calculator++/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -418,6 +436,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B8SW848K42;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "GCF & GCM Calculator++/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -8,13 +8,13 @@
 
 import UIKit
 import MessageUI
-//import GoogleMobileAds
+import GoogleMobileAds
 
 protocol HomeViewControllerDelegate:class {
     func loadColor()
 }
 
-class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate/*, GADBannerViewDelegate*/ {
+class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var themeButton: UIButton!
     @IBOutlet weak var feedbackButton: UIButton!
@@ -36,22 +36,21 @@ class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate/
     
     var labelArray:[UILabel?] = []
     
-//    var bannerView: GADBannerView!
+    var bannerView: GADBannerView!
     
-    var freeVersion: Bool = false
+    var freeVersion: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if (freeVersion) {
-//            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-//            addBannerViewToView(bannerView)
-//            
-//            bannerView.adUnitID = "ca-app-pub-7005013141953077/9075404978"
-//            bannerView.rootViewController = self
-//            bannerView.load(GADRequest())
-//            bannerView.delegate = self
-//        }
+        if (freeVersion) {
+            bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+            
+            bannerView.adUnitID = "ca-app-pub-7005013141953077/2670035887"
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            bannerView.delegate = self
+        }
         
         // Do any additional setup after loading the view.
         labelArray = [themeLabel, feedbackLabel, rateLabel, shareLabel]
@@ -92,7 +91,7 @@ class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate/
         mailComposerVC.mailComposeDelegate = self
         
         mailComposerVC.setToRecipients(["universappteam@gmail.com"])
-        mailComposerVC.setSubject("[GCF-LCM-Calculator Feedback]")
+        mailComposerVC.setSubject("[GCF&LCM-Calculator++ Feedback]")
         
         return mailComposerVC
     }
@@ -143,5 +142,37 @@ class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate/
         navigationController?.navigationBar.barTintColor = mainBackgroundColor[currentThemeIndex]
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: mainBackgroundColor[1 - currentThemeIndex]]
+    }
+}
+
+extension HomeViewController : GADBannerViewDelegate {
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        addBannerViewToView(bannerView)
+        
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+        })
     }
 }

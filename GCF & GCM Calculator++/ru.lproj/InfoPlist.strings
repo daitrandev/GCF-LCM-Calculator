@@ -5,5 +5,5 @@
   Created by Dai Tran on 10/30/17.
   Copyright © 2017 DaiTranDev. All rights reserved.
 */
-"CFBundleDisplayName" = "Нахождение НОД и НОК";
+"CFBundleDisplayName" = "НОД и НОК";
 "NSHumanReadableCopyright" = "Copyright © 2017 Dai Tran. All rights reserved.";
