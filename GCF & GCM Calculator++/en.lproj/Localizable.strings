@@ -8,7 +8,7 @@
 "Input" = "INPUT";
 "GCF" = "GCF";
 "LCM" = "LCM";
-"InputPlaceHolder" = "Numbers seperate by spaces";
+"InputPlaceHolder" = "Numbers seperate by spaces or commas";
 "GCFPlaceHolder" = "Greatest common factor";
 "LCMPlaceHolder" = "Least common multiple";
 "Home" = "Home";
