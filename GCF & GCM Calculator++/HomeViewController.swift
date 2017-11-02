@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate 
     
     var bannerView: GADBannerView!
     
-    var freeVersion: Bool = true
+    var freeVersion: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +61,8 @@ class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate 
         shareLabel.text = NSLocalizedString("Share", comment: "")
         
         loadColor()
+        
+        navigationController?.navigationBar.topItem?.title = NSLocalizedString("Home", comment: "")
     }
     
     override func didReceiveMemoryWarning() {
@@ -101,13 +103,15 @@ class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate 
     }
     
     @IBAction func OnRateAction(_ sender: Any) {
-        rateApp(appId: "id1291224425") { success in
+        let appId = freeVersion ? "id1291224425" : "id1304954640"
+        rateApp(appId: appId) { success in
             print("RateApp \(success)")
         }
     }
     
     @IBAction func OnShareAction(_ sender: Any) {
-        let message: String = "https://itunes.apple.com/app/id1291224425"
+        let appId = freeVersion ? "id1291224425" : "id1304954640"
+        let message: String = "https://itunes.apple.com/app/\(appId)"
         let vc = UIActivityViewController(activityItems: [message], applicationActivities: [])
         vc.popoverPresentationController?.sourceView = self.view
         present(vc, animated: true)

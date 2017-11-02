@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
     
     var interstitial: GADInterstitial?
     
-    var freeVersion: Bool = true
+    var freeVersion: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +61,12 @@ class MainViewController: UIViewController {
         if let value = UserDefaults.standard.object(forKey: "ThemeIndex") as? Int {
             currentThemeIndex = value
         } else {
-            UserDefaults.standard.set(1, forKey: "ThemeIndex")
+            UserDefaults.standard.set(0, forKey: "ThemeIndex")
         }
         
         loadColor()
+        
+        navigationController?.navigationBar.topItem?.title = NSLocalizedString("MainTitle", comment: "")
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,11 +118,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         cell.label.backgroundColor = UIColor.orange
         cell.label.makeRound()
         
-        cell.tag = indexPath.row
+        cell.textField.tag = indexPath.row
         
         textFieldArray[indexPath.row] = cell.textField
         
-        if (cell.tag == 0) {
+        if (cell.textField.tag == 0) {
             cell.textField.backgroundColor = UIColor.white
         } else {
             cell.textField.backgroundColor = UIColor.gray
@@ -134,6 +136,10 @@ extension MainViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        if (textField.tag == 1 || textField.tag == 2) {
+            return false
+        }
+        
         if (string == "") {
             return true
         }
@@ -145,10 +151,6 @@ extension MainViewController: UITextFieldDelegate {
         } else if (string == " " || string == ",") {
             seperateString = string
             return true
-        }
-        
-        if (textField.tag == 1 || textField.tag == 2) {
-            return false
         }
         
         for character in string {
@@ -198,6 +200,8 @@ extension MainViewController: HomeViewControllerDelegate {
         navigationController?.navigationBar.tintColor = UIColor.orange
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: mainBackgroundColor[1 - currentThemeIndex]]
+        
+        view.backgroundColor = mainBackgroundColor[currentThemeIndex]
         
         if #available(iOS 11, *) {
             let attributes = [NSAttributedStringKey.foregroundColor : mainBackgroundColor[1 - currentThemeIndex]]

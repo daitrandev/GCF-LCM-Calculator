@@ -44,7 +44,7 @@
                                                     <rect key="frame" x="98" y="11" width="207" height="43"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -65,7 +65,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eHj-ZF-Bjm" firstAttribute="bottom" secondItem="L73-e1-1XS" secondAttribute="bottom" id="0KZ-MD-hMD"/>
                             <constraint firstItem="L73-e1-1XS" firstAttribute="trailing" secondItem="eHj-ZF-Bjm" secondAttribute="trailing" id="LIc-Rz-0Al"/>
@@ -103,10 +103,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P7t-ha-D2c">
-                                <rect key="frame" x="55" y="148.5" width="210" height="271"/>
+                                <rect key="frame" x="50" y="143.5" width="220" height="281"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZvK-fX-mfg">
-                                        <rect key="frame" x="0.0" y="0.0" width="210" height="130.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZvK-fX-mfg">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="130.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gwx-hh-19B">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="130.5"/>
@@ -133,7 +133,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0K0-18-vGX">
-                                                <rect key="frame" x="110" y="0.0" width="100" height="130.5"/>
+                                                <rect key="frame" x="120" y="0.0" width="100" height="130.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjR-va-Ld1">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -157,9 +157,10 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
+                                        <variation key="heightClass=regular-widthClass=compact" axis="horizontal" spacing="20"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dsK-kt-7eo">
-                                        <rect key="frame" x="0.0" y="140.5" width="210" height="130.5"/>
+                                        <rect key="frame" x="0.0" y="150.5" width="220" height="130.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Kc-k1-AUr">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="130.5"/>
@@ -186,7 +187,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="izf-8f-sjs">
-                                                <rect key="frame" x="110" y="0.0" width="100" height="130.5"/>
+                                                <rect key="frame" x="120" y="0.0" width="100" height="130.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EP1-fF-QML">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -210,9 +211,11 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
+                                        <variation key="heightClass=regular-widthClass=compact" axis="horizontal" spacing="20"/>
                                     </stackView>
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
+                                <variation key="heightClass=regular-widthClass=compact" axis="vertical" spacing="20"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
