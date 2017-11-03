@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
     
     var interstitial: GADInterstitial?
     
-    var freeVersion: Bool = false
+    var freeVersion: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -188,6 +188,11 @@ extension MainViewController: UITextFieldDelegate {
         
         return alert
     }
+    
+    func showUpgradeMessageAlert() {
+        let alert = createAlert(title: NSLocalizedString("Appname", comment: ""), message: NSLocalizedString("UpgradeMessage", comment: ""))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension MainViewController: HomeViewControllerDelegate {
@@ -202,11 +207,6 @@ extension MainViewController: HomeViewControllerDelegate {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: mainBackgroundColor[1 - currentThemeIndex]]
         
         view.backgroundColor = mainBackgroundColor[currentThemeIndex]
-        
-        if #available(iOS 11, *) {
-            let attributes = [NSAttributedStringKey.foregroundColor : mainBackgroundColor[1 - currentThemeIndex]]
-            navigationController?.navigationBar.largeTitleTextAttributes = attributes
-        }
         
         if (currentThemeIndex == 0) {
             UIApplication.shared.statusBarStyle = .default
@@ -256,12 +256,19 @@ extension MainViewController : GADInterstitialDelegate {
         return interstitial
     }
     
+    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+       showUpgradeMessageAlert()
+    }
+    
+    func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
+       showUpgradeMessageAlert()
+    }
+    
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
         ad.present(fromRootViewController: self)
     }
     
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        let alert = createAlert(title: NSLocalizedString("Appname", comment: ""), message: NSLocalizedString("UpgradeMessage", comment: ""))
-        present(alert, animated: true, completion: nil)
+        showUpgradeMessageAlert()
     }
 }

@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate 
     
     var bannerView: GADBannerView!
     
-    var freeVersion: Bool = false
+    var freeVersion: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
