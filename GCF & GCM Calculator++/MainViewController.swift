@@ -39,6 +39,10 @@ class MainViewController: UIViewController {
     
     var freeVersion: Bool = true
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return currentThemeIndex == 0 ? .default : .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,15 +62,17 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        if let value = UserDefaults.standard.object(forKey: "ThemeIndex") as? Int {
-            currentThemeIndex = value
-        } else {
+        if UserDefaults.standard.object(forKey: "ThemeIndex") == nil {
             UserDefaults.standard.set(0, forKey: "ThemeIndex")
         }
         
         loadColor()
         
         navigationController?.navigationBar.topItem?.title = NSLocalizedString("MainTitle", comment: "")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        showUpgradeMessageAlert()
     }
 
     override func didReceiveMemoryWarning() {
@@ -176,13 +182,16 @@ extension MainViewController: UITextFieldDelegate {
             completion(UIApplication.shared.openURL(url))
             return
         }
-        UIApplication.shared.open(url, options: [:], completionHandler: completion)
+        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: completion)
     }
     
     func createAlert(title: String, message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {(action) in
+            self.setNeedsStatusBarAppearanceUpdate()
+        }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Upgarde", comment: ""), style: .default, handler: { (action) in
+            self.setNeedsStatusBarAppearanceUpdate()
             self.rateApp(appId: "id1304954640", completion: { print("Rate app status: \($0)")})
         }))
         
@@ -204,15 +213,11 @@ extension MainViewController: HomeViewControllerDelegate {
         navigationController?.navigationBar.barTintColor = mainBackgroundColor[currentThemeIndex]
         navigationController?.navigationBar.tintColor = UIColor.orange
         
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: mainBackgroundColor[1 - currentThemeIndex]]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: mainBackgroundColor[1 - currentThemeIndex]]
         
         view.backgroundColor = mainBackgroundColor[currentThemeIndex]
         
-        if (currentThemeIndex == 0) {
-            UIApplication.shared.statusBarStyle = .default
-        } else {
-            UIApplication.shared.statusBarStyle = .lightContent
-        }
+        setNeedsStatusBarAppearanceUpdate()
         
         tableView.reloadData()
     }
@@ -256,14 +261,6 @@ extension MainViewController : GADInterstitialDelegate {
         return interstitial
     }
     
-    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
-       showUpgradeMessageAlert()
-    }
-    
-    func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
-       showUpgradeMessageAlert()
-    }
-    
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
         ad.present(fromRootViewController: self)
     }
@@ -271,4 +268,9 @@ extension MainViewController : GADInterstitialDelegate {
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         showUpgradeMessageAlert()
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

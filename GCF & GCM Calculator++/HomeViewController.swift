@@ -40,6 +40,10 @@ class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate 
     
     var freeVersion: Bool = true
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return currentThemeIndex == 0 ? .default : .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -126,17 +130,14 @@ class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate 
             completion(UIApplication.shared.openURL(url))
             return
         }
-        UIApplication.shared.open(url, options: [:], completionHandler: completion)
+        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: completion)
     }
     
     func loadColor() {
+        currentThemeIndex = UserDefaults.standard.integer(forKey: "ThemeIndex")
         view.backgroundColor = mainBackgroundColor[currentThemeIndex]
         
-        if (currentThemeIndex == 0) {
-            UIApplication.shared.statusBarStyle = .default
-        } else {
-            UIApplication.shared.statusBarStyle = .lightContent
-        }
+        setNeedsStatusBarAppearanceUpdate()
         
         for i in 0..<labelArray.count {
             labelArray[i]?.textColor = mainBackgroundColor[1 - currentThemeIndex]
@@ -145,8 +146,9 @@ class HomeViewController: UIViewController, MFMailComposeViewControllerDelegate 
         navigationController?.navigationBar.tintColor = UIColor.orange
         navigationController?.navigationBar.barTintColor = mainBackgroundColor[currentThemeIndex]
         
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: mainBackgroundColor[1 - currentThemeIndex]]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: mainBackgroundColor[1 - currentThemeIndex]]
     }
+    
 }
 
 extension HomeViewController : GADBannerViewDelegate {
@@ -179,4 +181,9 @@ extension HomeViewController : GADBannerViewDelegate {
             bannerView.alpha = 1
         })
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

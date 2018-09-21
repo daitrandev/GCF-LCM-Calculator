@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "HomeViewController.OnThemeAction(_:):HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentThemeIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.viewDidLoad():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UserDefaults.standard.set(0, forKey: &quot;ThemeIndex&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.loadColor():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentThemeIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.loadColor():HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentThemeIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

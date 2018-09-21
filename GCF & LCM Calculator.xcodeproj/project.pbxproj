@@ -12,16 +12,14 @@
 		232A8B681FA6CA6200A76143 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B671FA6CA6200A76143 /* MainViewController.swift */; };
 		232A8B6A1FA6CB6600A76143 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B691FA6CB6600A76143 /* MainTableViewCell.swift */; };
 		232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */; };
+		23BF0E722155115C0010CDFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF0E712155115C0010CDFF /* Extensions.swift */; };
 		23C135471FA86B6400659196 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C135451FA86B6400659196 /* LaunchScreen.storyboard */; };
 		23C1354A1FA86B9E00659196 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C135481FA86B9E00659196 /* Main.storyboard */; };
 		23D6D8A81FA9B93B00243F5D /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D6D8A71FA9B93B00243F5D /* GoogleMobileAds.framework */; };
 		23E9140F1FA7035E00F79C0E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E9140E1FA7035E00F79C0E /* HomeViewController.swift */; };
 		23E914141FA714D200F79C0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E914161FA714D200F79C0E /* InfoPlist.strings */; };
 		23E914171FA714D700F79C0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E914191FA714D700F79C0E /* Localizable.strings */; };
-		23E914621FA7248600F79C0E /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E9145B1FA7248600F79C0E /* TPKeyboardAvoidingCollectionView.m */; };
-		23E914631FA7248600F79C0E /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E9145D1FA7248600F79C0E /* TPKeyboardAvoidingScrollView.m */; };
-		23E914641FA7248600F79C0E /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E9145F1FA7248600F79C0E /* TPKeyboardAvoidingTableView.m */; };
-		23E914651FA7248600F79C0E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E914611FA7248600F79C0E /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		CB766643CC52C4A764E65228 /* Pods_GCF___LCM_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6EC76A029CD1A90D48B75D /* Pods_GCF___LCM_Calculator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +30,7 @@
 		232A8B671FA6CA6200A76143 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		232A8B691FA6CB6600A76143 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorUtilities.swift; sourceTree = "<group>"; };
+		23BF0E712155115C0010CDFF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		23C135211FA868A200659196 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "GCF & GCM Calculator++/en.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		23C135221FA868F900659196 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "GCF & GCM Calculator++/en.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		23C135231FA8690700659196 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = "GCF & GCM Calculator++/de.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -64,14 +63,9 @@
 		23D6D8A61FA9B40300243F5D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "GCF & GCM Calculator++/zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		23D6D8A71FA9B93B00243F5D /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		23E9140E1FA7035E00F79C0E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		23E9145A1FA7248600F79C0E /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
-		23E9145B1FA7248600F79C0E /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
-		23E9145C1FA7248600F79C0E /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		23E9145D1FA7248600F79C0E /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		23E9145E1FA7248600F79C0E /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
-		23E9145F1FA7248600F79C0E /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
-		23E914601FA7248600F79C0E /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
-		23E914611FA7248600F79C0E /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		5A6EC76A029CD1A90D48B75D /* Pods_GCF___LCM_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_GCF___LCM_Calculator.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E285A833A16869A8575821B /* Pods-GCF & LCM Calculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCF & LCM Calculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GCF & LCM Calculator/Pods-GCF & LCM Calculator.debug.xcconfig"; sourceTree = "<group>"; };
+		5E526C0E037E4E50355EF751 /* Pods-GCF & LCM Calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCF & LCM Calculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-GCF & LCM Calculator/Pods-GCF & LCM Calculator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,19 +74,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				23D6D8A81FA9B93B00243F5D /* GoogleMobileAds.framework in Frameworks */,
+				CB766643CC52C4A764E65228 /* Pods_GCF___LCM_Calculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		141BF96545F01CE734BAD8C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A6EC76A029CD1A90D48B75D /* Pods_GCF___LCM_Calculator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		232A8B491FA6C5E700A76143 = {
 			isa = PBXGroup;
 			children = (
-				23E914591FA7248600F79C0E /* TPKeyboardAvoiding */,
 				232A8B541FA6C5E700A76143 /* GCF & GCM Calculator++ */,
 				232A8B531FA6C5E700A76143 /* Products */,
 				23D6D8A71FA9B93B00243F5D /* GoogleMobileAds.framework */,
+				909B354CE99F3D60502DDF92 /* Pods */,
+				141BF96545F01CE734BAD8C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +116,7 @@
 				232A8B551FA6C5E700A76143 /* AppDelegate.swift */,
 				232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */,
 				232A8B691FA6CB6600A76143 /* MainTableViewCell.swift */,
+				23BF0E712155115C0010CDFF /* Extensions.swift */,
 				232A8B671FA6CA6200A76143 /* MainViewController.swift */,
 				23E9140E1FA7035E00F79C0E /* HomeViewController.swift */,
 				232A8B5C1FA6C5E700A76143 /* Assets.xcassets */,
@@ -122,19 +127,13 @@
 			path = "GCF & GCM Calculator++";
 			sourceTree = "<group>";
 		};
-		23E914591FA7248600F79C0E /* TPKeyboardAvoiding */ = {
+		909B354CE99F3D60502DDF92 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				23E9145A1FA7248600F79C0E /* TPKeyboardAvoidingCollectionView.h */,
-				23E9145B1FA7248600F79C0E /* TPKeyboardAvoidingCollectionView.m */,
-				23E9145C1FA7248600F79C0E /* TPKeyboardAvoidingScrollView.h */,
-				23E9145D1FA7248600F79C0E /* TPKeyboardAvoidingScrollView.m */,
-				23E9145E1FA7248600F79C0E /* TPKeyboardAvoidingTableView.h */,
-				23E9145F1FA7248600F79C0E /* TPKeyboardAvoidingTableView.m */,
-				23E914601FA7248600F79C0E /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				23E914611FA7248600F79C0E /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				5E285A833A16869A8575821B /* Pods-GCF & LCM Calculator.debug.xcconfig */,
+				5E526C0E037E4E50355EF751 /* Pods-GCF & LCM Calculator.release.xcconfig */,
 			);
-			path = TPKeyboardAvoiding;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 232A8B641FA6C5E700A76143 /* Build configuration list for PBXNativeTarget "GCF & LCM Calculator" */;
 			buildPhases = (
+				300DCBBCCEC24461298B4C96 /* [CP] Check Pods Manifest.lock */,
 				232A8B4E1FA6C5E700A76143 /* Sources */,
 				232A8B4F1FA6C5E700A76143 /* Frameworks */,
 				232A8B501FA6C5E700A76143 /* Resources */,
+				34E9C95D77103769EECF5998 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,13 +165,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = DaiTranDev;
 				TargetAttributes = {
 					232A8B511FA6C5E700A76143 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = B8SW848K42;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -220,19 +221,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		300DCBBCCEC24461298B4C96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GCF & LCM Calculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34E9C95D77103769EECF5998 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GCF & LCM Calculator/Pods-GCF & LCM Calculator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GCF & LCM Calculator/Pods-GCF & LCM Calculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		232A8B4E1FA6C5E700A76143 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23E914631FA7248600F79C0E /* TPKeyboardAvoidingScrollView.m in Sources */,
-				23E914641FA7248600F79C0E /* TPKeyboardAvoidingTableView.m in Sources */,
 				23E9140F1FA7035E00F79C0E /* HomeViewController.swift in Sources */,
 				232A8B561FA6C5E700A76143 /* AppDelegate.swift in Sources */,
-				23E914651FA7248600F79C0E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				23BF0E722155115C0010CDFF /* Extensions.swift in Sources */,
 				232A8B6A1FA6CB6600A76143 /* MainTableViewCell.swift in Sources */,
 				232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */,
-				23E914621FA7248600F79C0E /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				232A8B681FA6CA6200A76143 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +355,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -325,6 +363,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -376,6 +415,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -383,6 +423,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -414,6 +455,7 @@
 		};
 		232A8B651FA6C5E700A76143 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E285A833A16869A8575821B /* Pods-GCF & LCM Calculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B8SW848K42;
@@ -427,13 +469,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DaiTranDev.GCF-LCM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		232A8B661FA6C5E700A76143 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E526C0E037E4E50355EF751 /* Pods-GCF & LCM Calculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B8SW848K42;
@@ -447,8 +489,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DaiTranDev.GCF-LCM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
