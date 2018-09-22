@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
     
     var interstitial: GADInterstitial?
     
-    var freeVersion: Bool = true
+    var freeVersion: Bool = false
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return currentThemeIndex == 0 ? .default : .lightContent
@@ -72,7 +72,9 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        showUpgradeMessageAlert()
+        if (freeVersion) {
+            showUpgradeMessageAlert()
+        }
     }
 
     override func didReceiveMemoryWarning() {
