@@ -8,6 +8,7 @@ target 'GCF & LCM Calculator Free' do
   # Pods for GCF & LCM Calculator Free
   pod 'IQKeyboardManagerSwift'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'SideMenu'
 end
 
 target 'GCF & LCM Calculator' do
@@ -16,4 +17,6 @@ target 'GCF & LCM Calculator' do
 
   # Pods for GCF & LCM Calculator
   pod 'IQKeyboardManagerSwift'
+  pod 'Google-Mobile-Ads-SDK'
+  pod 'SideMenu'
 end

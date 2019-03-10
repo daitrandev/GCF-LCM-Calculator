@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
@@ -16,7 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-7005013141953077~6713431135")
         IQKeyboardManager.shared.enable = true
+        
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: MainViewController())
+        
         return true
     }
 
