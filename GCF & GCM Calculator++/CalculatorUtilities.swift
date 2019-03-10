@@ -55,8 +55,6 @@ class CalculatorUtilities {
         
         guard var lcm = Int(stringNumbers[0]) else { return nil }
         
-//        var noNumberInStringNumbers: Bool = true
-        
         for i in 1..<stringNumbers.count {
             if (stringNumbers[i] == "") {
                 continue
@@ -65,8 +63,6 @@ class CalculatorUtilities {
             guard let num = Int(stringNumbers[i]) else { return nil }
             
             guard let LCM = LCM(number1: lcm, number2: num) else { return nil }
-            
-//            noNumberInStringNumbers = false
             
             lcm = LCM
         }

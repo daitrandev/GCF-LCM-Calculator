@@ -32,6 +32,8 @@ class MainViewController: UIViewController {
         CellModel(labelText: NSLocalizedString("GCF", comment: ""), textFieldText: nil, textFieldPlaceHolder: NSLocalizedString("GCFPlaceHolder", comment: ""), isLightTheme: isLightTheme, isEnabled: false),
         CellModel(labelText: NSLocalizedString("LCM", comment: ""), textFieldText: nil, textFieldPlaceHolder: NSLocalizedString("LCMPlaceHolder", comment: ""), isLightTheme: isLightTheme, isEnabled: false)
     ]
+    
+    let isFreeVersion = Bundle.main.infoDictionary?["isFreeVersion"] as? Bool ?? true
         
     var isLightTheme: Bool = {
         if let isLightTheme = UserDefaults.standard.object(forKey: isLightThemeKey) as? Bool {

@@ -17,6 +17,5 @@ let appIdFree = "1291224425"
 let appId = "1304954640"
 
 let debug = true // to config ads id
-let isFreeVersion = true // to config whether should show ads or not
 
 let isLightThemeKey = "isLightThemeKey"
