@@ -10,14 +10,12 @@
 		232A8B5D1FA6C5E700A76143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232A8B5C1FA6C5E700A76143 /* Assets.xcassets */; };
 		232A8B6A1FA6CB6600A76143 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B691FA6CB6600A76143 /* MainTableViewCell.swift */; };
 		232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */; };
-		23751F8121AA661F00E739BF /* LaunchScreenFree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23751F8021AA661F00E739BF /* LaunchScreenFree.storyboard */; };
 		23751F8621AA66DF00E739BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B551FA6C5E700A76143 /* AppDelegate.swift */; };
 		23751F8721AA66DF00E739BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF0E712155115C0010CDFF /* Extensions.swift */; };
 		23751F8821AA66DF00E739BF /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B691FA6CB6600A76143 /* MainTableViewCell.swift */; };
 		23751F8921AA66DF00E739BF /* CalculatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */; };
 		23751F8A21AA66DF00E739BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B671FA6CA6200A76143 /* MainViewController.swift */; };
 		23751F8F21AA66DF00E739BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E914191FA714D700F79C0E /* Localizable.strings */; };
-		23751F9221AA66DF00E739BF /* LaunchScreenFree.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23751F8021AA661F00E739BF /* LaunchScreenFree.storyboard */; };
 		23751F9321AA66DF00E739BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E914161FA714D200F79C0E /* InfoPlist.strings */; };
 		23751F9421AA66DF00E739BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232A8B5C1FA6C5E700A76143 /* Assets.xcassets */; };
 		23BF0E722155115C0010CDFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF0E712155115C0010CDFF /* Extensions.swift */; };
@@ -46,7 +44,6 @@
 		232A8B671FA6CA6200A76143 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		232A8B691FA6CB6600A76143 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorUtilities.swift; sourceTree = "<group>"; };
-		23751F8021AA661F00E739BF /* LaunchScreenFree.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenFree.storyboard; sourceTree = "<group>"; };
 		23751F9921AA66DF00E739BF /* GCF & LCM Calculator Free.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GCF & LCM Calculator Free.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23751F9A21AA66DF00E739BF /* InfoFree.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InfoFree.plist; sourceTree = "<group>"; };
 		23BF0E712155115C0010CDFF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -128,7 +125,6 @@
 				FAB0CCC22233DAF900102A8F /* Controller */,
 				FAB0CCC32233DB1700102A8F /* Model */,
 				FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */,
-				23751F8021AA661F00E739BF /* LaunchScreenFree.storyboard */,
 				23E914191FA714D700F79C0E /* Localizable.strings */,
 				23E914161FA714D200F79C0E /* InfoPlist.strings */,
 				232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */,
@@ -272,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				23E914171FA714D700F79C0E /* Localizable.strings in Resources */,
-				23751F8121AA661F00E739BF /* LaunchScreenFree.storyboard in Resources */,
 				FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */,
 				23E914141FA714D200F79C0E /* InfoPlist.strings in Resources */,
 				232A8B5D1FA6C5E700A76143 /* Assets.xcassets in Resources */,
@@ -284,7 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				23751F8F21AA66DF00E739BF /* Localizable.strings in Resources */,
-				23751F9221AA66DF00E739BF /* LaunchScreenFree.storyboard in Resources */,
 				23751F9321AA66DF00E739BF /* InfoPlist.strings in Resources */,
 				23751F9421AA66DF00E739BF /* Assets.xcassets in Resources */,
 			);
