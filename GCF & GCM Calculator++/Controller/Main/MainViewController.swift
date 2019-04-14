@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SideMenu
 import MessageUI
 import GoogleMobileAds
 
