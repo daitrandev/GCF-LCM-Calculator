@@ -33,10 +33,9 @@ class MainTableViewCell: UITableViewCell {
         let label = UILabel()
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.textAlignment = .center
         label.layer.cornerRadius = 5
         label.layer.masksToBounds = true
-        label.textColor = .white
+        label.textColor = .orange
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -64,7 +63,6 @@ class MainTableViewCell: UITableViewCell {
             textField.makeRound()
             
             label.text = cellModel.labelText
-            label.backgroundColor = .orange
             label.makeRound()
         }
     }
@@ -76,16 +74,16 @@ class MainTableViewCell: UITableViewCell {
         addSubview(label)
         addSubview(textField)
         
-        label.constraintTo(top: topAnchor, bottom: bottomAnchor, left: contentView.leftAnchor, right: nil, topConstant: 8, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
-        label.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        label.constraintTo(top: topAnchor, bottom: nil, left: contentView.leftAnchor, right: nil, topConstant: 8, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
+        label.heightAnchor.constraint(equalToConstant: 25).isActive = true
         
         guard let isFreeVersion = Bundle.main.infoDictionary?["isFreeVersion"] as? Bool else { return }
         if isFreeVersion {
-            textField.constraintTo(top: topAnchor, bottom: bottomAnchor, left: label.rightAnchor, right: rightAnchor, topConstant: 8, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
+            textField.constraintTo(top: label.bottomAnchor, bottom: bottomAnchor, left: contentView.leftAnchor, right: contentView.rightAnchor, topConstant: 0, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
         } else {
             addSubview(copyButton)
             
-            textField.constraintTo(top: topAnchor, bottom: bottomAnchor, left: label.rightAnchor, right: copyButton.leftAnchor, topConstant: 8, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
+            textField.constraintTo(top: label.bottomAnchor, bottom: bottomAnchor, left: contentView.leftAnchor, right: copyButton.leftAnchor, topConstant: 0, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
             
             copyButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8).isActive = true
             copyButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
@@ -99,7 +97,7 @@ class MainTableViewCell: UITableViewCell {
     }
     
     @objc func didTapCopy() {
-        if let textFieldText = textField.text {
+        if let textFieldText = textField.text, !textFieldText.isEmpty {
             UIPasteboard.general.string = textFieldText
             delegate?.presentCopiedAlert(message: NSLocalizedString("Copied", comment: ""))
         } else {

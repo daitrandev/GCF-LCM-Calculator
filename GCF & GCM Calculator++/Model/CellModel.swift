@@ -10,6 +10,6 @@ struct CellModel {
     let labelText: String
     var textFieldText: String?
     let textFieldPlaceHolder: String
-    let isLightTheme: Bool
+    var isLightTheme: Bool
     let isEnabled: Bool
 }

@@ -16,6 +16,6 @@ let interstialAdsUnitID = "ca-app-pub-7005013141953077/6898368584"
 let appIdFree = "1291224425"
 let appId = "1304954640"
 
-let debug = true // to config ads id
+let debug = false // to config ads id
 
 let isLightThemeKey = "isLightThemeKey"

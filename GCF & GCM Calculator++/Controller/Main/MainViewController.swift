@@ -167,6 +167,9 @@ extension MainViewController: MenuViewControllerDelegate {
     
     func changeTheme() {
         isLightTheme = !isLightTheme
+        for i in 0..<cellModels.count {
+            cellModels[i].isLightTheme = isLightTheme
+        }
         UserDefaults.standard.set(isLightTheme, forKey: isLightThemeKey)
         loadColor(isLightTheme: isLightTheme)
     }
@@ -201,7 +204,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
+        return 100
     }
 }
 
@@ -231,7 +234,7 @@ extension MainViewController: UITextFieldDelegate {
         if (isUpgradeMessage) {
             alert.addAction(UIAlertAction(title: NSLocalizedString("Upgrade", comment: ""), style: .default, handler: { (action) in
                 self.setNeedsStatusBarAppearanceUpdate()
-                self.rateApp(appId: appIdFree) { success in
+                self.rateApp(appId: appId) { success in
                     print("RateApp \(success)")
                 }
             }))
