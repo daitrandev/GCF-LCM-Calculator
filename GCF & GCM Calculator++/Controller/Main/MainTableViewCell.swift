@@ -43,7 +43,7 @@ class MainTableViewCell: UITableViewCell {
     
     private lazy var copyButton: UIButton = {
         let button = UIButton(type: UIButton.ButtonType.custom)
-        let buttonImage = UserDefaults.standard.bool(forKey: isLightThemeKey) ? UIImage(named: "copy-blue") : UIImage(named: "copy-orange")
+        let buttonImage = UIImage(named: "copy-orange")
         button.setImage(buttonImage, for: .normal)
         button.addTarget(self, action: #selector(didTapCopy), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -80,7 +80,7 @@ class MainTableViewCell: UITableViewCell {
         label.widthAnchor.constraint(equalToConstant: 80).isActive = true
         
         guard let isFreeVersion = Bundle.main.infoDictionary?["isFreeVersion"] as? Bool else { return }
-        if !isFreeVersion {
+        if isFreeVersion {
             textField.constraintTo(top: topAnchor, bottom: bottomAnchor, left: label.rightAnchor, right: rightAnchor, topConstant: 8, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
         } else {
             addSubview(copyButton)

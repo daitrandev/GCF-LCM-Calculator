@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bR9-hJ-5sZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bR9-hJ-5sZ">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,14 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PhC-Sd-TuA">
-                        <barButtonItem key="leftBarButtonItem" image="home" id="s7x-z6-BRk">
-                            <color key="tintColor" red="0.9882352941176471" green="0.53333333333333333" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="refresh" id="n5R-Z1-Zu9">
-                            <color key="tintColor" red="0.98823529409999999" green="0.53333333329999999" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="PhC-Sd-TuA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sS-Fi-iDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,8 +48,4 @@
             <point key="canvasLocation" x="1181.25" y="111.25"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="home" width="32" height="32"/>
-        <image name="refresh" width="32" height="32.799999237060547"/>
-    </resources>
 </document>
