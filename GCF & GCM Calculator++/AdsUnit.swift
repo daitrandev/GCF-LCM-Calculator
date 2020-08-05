@@ -1,5 +1,5 @@
 //
-//  Constant.swift
+//  AdsUnit.swift
 //  GCF & LCM Calculator
 //
 //  Created by Macbook on 3/9/19.
@@ -17,5 +17,3 @@ let interstialAdsUnitID = "ca-app-pub-3940256099942544/4411468910"
 #elseif RELEASE
 let interstialAdsUnitID = "ca-app-pub-7005013141953077/6898368584"
 #endif
-
-let isLightThemeKey = "isLightThemeKey"

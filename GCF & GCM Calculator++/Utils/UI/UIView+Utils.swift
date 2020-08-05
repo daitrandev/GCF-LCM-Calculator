@@ -1,9 +1,9 @@
 //
-//  Extensions.swift
+//  UIView.swift
 //  GCF & LCM Calculator
 //
-//  Created by Dai Tran on 9/21/18.
-//  Copyright © 2018 DaiTranDev. All rights reserved.
+//  Created by Dai.Tran on 8/5/20.
+//  Copyright © 2020 DaiTranDev. All rights reserved.
 //
 
 import UIKit
@@ -36,27 +36,8 @@ extension UIView {
     }
 }
 
-extension UITextField {
-    func makeRound() {
-        self.clipsToBounds = true
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 5
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.orange.cgColor
-    }
-}
-
-extension UILabel {
-    func makeRound() {
-        self.clipsToBounds = true
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 5
-    }
-}
-
-
-extension UINavigationController {
-    open override var childForStatusBarStyle: UIViewController? {
-        return topViewController
+extension UIView {
+    func set(borderColor: UIColor) {
+        self.layer.borderColor = borderColor.cgColor
     }
 }

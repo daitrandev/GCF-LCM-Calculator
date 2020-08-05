@@ -10,7 +10,7 @@ import UIKit
 
 protocol MainTableViewCellDelegate: class {
     func presentCopiedAlert(message: String)
-    func updateInputText(inputTextFieldText: String, separatedString: String)
+    func updateInput(inputTextFieldText: String, separatedString: String)
 }
 
 class MainTableViewCell: UITableViewCell {
@@ -19,6 +19,7 @@ class MainTableViewCell: UITableViewCell {
         let textField = UITextField()
         textField.layer.borderWidth = 2
         textField.layer.cornerRadius = 5
+        textField.set(borderColor: UIColor.orange)
         textField.textAlignment = .center
         textField.layer.masksToBounds = true
         textField.returnKeyType = .done
@@ -33,8 +34,6 @@ class MainTableViewCell: UITableViewCell {
         let label = UILabel()
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.layer.cornerRadius = 5
-        label.layer.masksToBounds = true
         label.textColor = .orange
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -49,20 +48,18 @@ class MainTableViewCell: UITableViewCell {
         return button
     }()
     
-    var separatedString: String = " "
+    private var separatedString: String = " "
     
-    var cellModel: CellModel? {
+    private var item: MainViewModel.CellLayoutItem? {
         didSet {
-            guard let cellModel = cellModel else { return }
+            guard let item = item else { return }
             
-            textField.placeholder = cellModel.textFieldPlaceHolder
-            textField.backgroundColor = cellModel.isEnabled ? .white : .gray
-            textField.isEnabled = cellModel.isEnabled
-            textField.text = cellModel.textFieldText
-            textField.makeRound()
+            textField.placeholder = item.textFieldPlaceHolder
+            textField.backgroundColor = item.isEnabled ? .white : .gray
+            textField.isEnabled = item.isEnabled
+            textField.text = item.textFieldText
             
-            label.text = cellModel.labelText
-            label.makeRound()
+            label.text = item.labelText
         }
     }
     
@@ -87,16 +84,15 @@ class MainTableViewCell: UITableViewCell {
         
         textField.addTarget(self, action: #selector(self.textFieldEditingChanged(_:)), for: .editingChanged)
         textField.delegate = self
-        backgroundColor = .clear
+    }
+    
+    func configure(with item: MainViewModel.CellLayoutItem) {
+        self.item = item
     }
     
     @objc func didTapCopy() {
-        if let textFieldText = textField.text, !textFieldText.isEmpty {
-            UIPasteboard.general.string = textFieldText
-            delegate?.presentCopiedAlert(message: "Copied")
-        } else {
-            delegate?.presentCopiedAlert(message: "Nothing to copy")
-        }
+        UIPasteboard.general.string = textField.text!
+        delegate?.presentCopiedAlert(message: "Copied")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -109,8 +105,7 @@ class MainTableViewCell: UITableViewCell {
         }
         
         guard let inputTextFieldText = sender.text else { return }
-        
-        delegate?.updateInputText(
+        delegate?.updateInput(
             inputTextFieldText: inputTextFieldText,
             separatedString: separatedString
         )
