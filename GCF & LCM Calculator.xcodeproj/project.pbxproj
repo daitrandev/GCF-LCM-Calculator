@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,16 @@
 		232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */; };
 		D76E993A24DADCFD0005D424 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E993924DADCFD0005D424 /* UIView+Utils.swift */; };
 		D76E993E24DADE590005D424 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E993D24DADE590005D424 /* MainViewModel.swift */; };
+		D76E994424DAF3DD0005D424 /* PurchasingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E994124DAF3DD0005D424 /* PurchasingPopupViewController.swift */; };
+		D76E994524DAF3DD0005D424 /* PurchasingPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E994224DAF3DD0005D424 /* PurchasingPopupViewController.xib */; };
+		D76E994624DAF3DD0005D424 /* PurchasingPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E994324DAF3DD0005D424 /* PurchasingPopupViewModel.swift */; };
+		D76E994924DAF41B0005D424 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D76E994824DAF41B0005D424 /* SwiftPackageProductDependency */; };
+		D76E994C24DAF50A0005D424 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = D76E994B24DAF50A0005D424 /* SwiftPackageProductDependency */; };
+		D76E994E24DAF57D0005D424 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E994D24DAF57C0005D424 /* LoadingButton.swift */; };
+		D76E995124DAF5A80005D424 /* HUDPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E994F24DAF5A70005D424 /* HUDPresentable.swift */; };
+		D76E995224DAF5A80005D424 /* MessageDialogPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995024DAF5A80005D424 /* MessageDialogPresentable.swift */; };
+		D76E995424DAF6210005D424 /* GlobalKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995324DAF6210005D424 /* GlobalKeychain.swift */; };
+		D76E995724DAF6520005D424 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995624DAF6520005D424 /* KeychainKey.swift */; };
 		FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */; };
 		FAB0CCBA223373CB00102A8F /* AdsUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCB9223373CB00102A8F /* AdsUnit.swift */; };
 		FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B551FA6C5E700A76143 /* AppDelegate.swift */; };
@@ -28,6 +38,14 @@
 		232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorUtilities.swift; sourceTree = "<group>"; };
 		D76E993924DADCFD0005D424 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		D76E993D24DADE590005D424 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		D76E994124DAF3DD0005D424 /* PurchasingPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasingPopupViewController.swift; sourceTree = "<group>"; };
+		D76E994224DAF3DD0005D424 /* PurchasingPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchasingPopupViewController.xib; sourceTree = "<group>"; };
+		D76E994324DAF3DD0005D424 /* PurchasingPopupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasingPopupViewModel.swift; sourceTree = "<group>"; };
+		D76E994D24DAF57C0005D424 /* LoadingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		D76E994F24DAF5A70005D424 /* HUDPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDPresentable.swift; sourceTree = "<group>"; };
+		D76E995024DAF5A80005D424 /* MessageDialogPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDialogPresentable.swift; sourceTree = "<group>"; };
+		D76E995324DAF6210005D424 /* GlobalKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalKeychain.swift; sourceTree = "<group>"; };
+		D76E995624DAF6520005D424 /* KeychainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
 		FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB0CCB9223373CB00102A8F /* AdsUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsUnit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76E994C24DAF50A0005D424 /* BuildFile in Frameworks */,
+				D76E994924DAF41B0005D424 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,12 +83,13 @@
 		232A8B541FA6C5E700A76143 /* GCF & GCM Calculator++ */ = {
 			isa = PBXGroup;
 			children = (
+				D76E995524DAF6480005D424 /* Models */,
 				232A8B611FA6C5E700A76143 /* Info.plist */,
 				FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */,
 				FAB0CCB9223373CB00102A8F /* AdsUnit.swift */,
 				232A8B551FA6C5E700A76143 /* AppDelegate.swift */,
 				232A8B5C1FA6C5E700A76143 /* Assets.xcassets */,
-				FAB0CCC22233DAF900102A8F /* Controller */,
+				FAB0CCC22233DAF900102A8F /* Controllers */,
 				D76E993724DADCE10005D424 /* Utils */,
 			);
 			path = "GCF & GCM Calculator++";
@@ -93,6 +114,9 @@
 		D76E993824DADCEC0005D424 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D76E994F24DAF5A70005D424 /* HUDPresentable.swift */,
+				D76E995024DAF5A80005D424 /* MessageDialogPresentable.swift */,
+				D76E994D24DAF57C0005D424 /* LoadingButton.swift */,
 				D76E993924DADCFD0005D424 /* UIView+Utils.swift */,
 			);
 			path = UI;
@@ -101,9 +125,28 @@
 		D76E993F24DADF6A0005D424 /* NonUI */ = {
 			isa = PBXGroup;
 			children = (
+				D76E995324DAF6210005D424 /* GlobalKeychain.swift */,
 				232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */,
 			);
 			path = NonUI;
+			sourceTree = "<group>";
+		};
+		D76E994024DAF3DD0005D424 /* PurchasingPopupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D76E994124DAF3DD0005D424 /* PurchasingPopupViewController.swift */,
+				D76E994224DAF3DD0005D424 /* PurchasingPopupViewController.xib */,
+				D76E994324DAF3DD0005D424 /* PurchasingPopupViewModel.swift */,
+			);
+			path = PurchasingPopupViewController;
+			sourceTree = "<group>";
+		};
+		D76E995524DAF6480005D424 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D76E995624DAF6520005D424 /* KeychainKey.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FA14C5852234C2090044A026 /* Main */ = {
@@ -116,12 +159,13 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		FAB0CCC22233DAF900102A8F /* Controller */ = {
+		FAB0CCC22233DAF900102A8F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D76E994024DAF3DD0005D424 /* PurchasingPopupViewController */,
 				FA14C5852234C2090044A026 /* Main */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +184,10 @@
 			dependencies = (
 			);
 			name = "GCF & LCM Calculator";
+			packageProductDependencies = (
+				D76E994824DAF41B0005D424 /* SwiftPackageProductDependency */,
+				D76E994B24DAF50A0005D424 /* SwiftPackageProductDependency */,
+			);
 			productName = "GCF & GCM Calculator++";
 			productReference = 232A8B521FA6C5E700A76143 /* GCF & LCM Calculator.app */;
 			productType = "com.apple.product-type.application";
@@ -169,20 +217,12 @@
 			knownRegions = (
 				en,
 				Base,
-				fr,
-				de,
-				id,
-				it,
-				ja,
-				ko,
-				pt,
-				ru,
-				es,
-				vi,
-				"zh-Hans",
-				"zh-Hant",
 			);
 			mainGroup = 232A8B491FA6C5E700A76143;
+			packageReferences = (
+				D76E994724DAF41B0005D424 /* RemoteSwiftPackageReference */,
+				D76E994A24DAF50A0005D424 /* RemoteSwiftPackageReference */,
+			);
 			productRefGroup = 232A8B531FA6C5E700A76143 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76E994524DAF3DD0005D424 /* PurchasingPopupViewController.xib in Resources */,
 				FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */,
 				232A8B5D1FA6C5E700A76143 /* Assets.xcassets in Resources */,
 			);
@@ -209,11 +250,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76E995424DAF6210005D424 /* GlobalKeychain.swift in Sources */,
 				232A8B6A1FA6CB6600A76143 /* MainTableViewCell.swift in Sources */,
+				D76E995124DAF5A80005D424 /* HUDPresentable.swift in Sources */,
 				232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */,
+				D76E994E24DAF57D0005D424 /* LoadingButton.swift in Sources */,
 				FAB0CCBD2233772800102A8F /* MainViewController.swift in Sources */,
 				D76E993A24DADCFD0005D424 /* UIView+Utils.swift in Sources */,
 				FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */,
+				D76E995224DAF5A80005D424 /* MessageDialogPresentable.swift in Sources */,
+				D76E995724DAF6520005D424 /* KeychainKey.swift in Sources */,
+				D76E994624DAF3DD0005D424 /* PurchasingPopupViewModel.swift in Sources */,
+				D76E994424DAF3DD0005D424 /* PurchasingPopupViewController.swift in Sources */,
 				FAB0CCBA223373CB00102A8F /* AdsUnit.swift in Sources */,
 				D76E993E24DADE590005D424 /* MainViewModel.swift in Sources */,
 			);
@@ -329,7 +377,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -347,7 +396,10 @@
 				);
 				INFOPLIST_FILE = "GCF & GCM Calculator++/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DaiTranDev.GCF-LCM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,7 +419,10 @@
 				);
 				INFOPLIST_FILE = "GCF & GCM Calculator++/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DaiTranDev.GCF-LCM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -398,6 +453,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D76E994724DAF41B0005D424 /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.1;
+			};
+		};
+		D76E994A24DAF50A0005D424 /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D76E994824DAF41B0005D424 /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D76E994724DAF41B0005D424 /* RemoteSwiftPackageReference */;
+			productName = SwiftyStoreKit;
+		};
+		D76E994B24DAF50A0005D424 /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D76E994A24DAF50A0005D424 /* RemoteSwiftPackageReference */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 232A8B4A1FA6C5E700A76143 /* Project object */;
 }

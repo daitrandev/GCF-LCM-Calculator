@@ -8,4 +8,5 @@ target 'GCF & LCM Calculator' do
   # Pods for GCF & LCM Calculator
   pod 'Google-Mobile-Ads-SDK'
   pod 'IQKeyboardManagerSwift'
+  pod 'MBProgressHUD'
 end

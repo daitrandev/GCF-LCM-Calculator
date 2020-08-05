@@ -63,7 +63,7 @@ class MainTableViewCell: UITableViewCell {
         }
     }
     
-    var delegate: MainTableViewCellDelegate?
+    weak var delegate: MainTableViewCellDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
