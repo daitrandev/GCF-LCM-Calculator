@@ -6,16 +6,16 @@
 //  Copyright © 2019 DaiTranDev. All rights reserved.
 //
 
-let bannerAdsUnitIDTrial = "ca-app-pub-3940256099942544/2934735716"
+#if DEBUG
+let bannerAdsUnitID = "ca-app-pub-3940256099942544/2934735716"
+#elseif RELEASE
 let bannerAdsUnitID = "ca-app-pub-7005013141953077/2670035887"
+#endif
 
-
-let interstialAdsUnitIDTrial = "ca-app-pub-3940256099942544/4411468910"
+#if DEBUG
+let interstialAdsUnitID = "ca-app-pub-3940256099942544/4411468910"
+#elseif RELEASE
 let interstialAdsUnitID = "ca-app-pub-7005013141953077/6898368584"
-
-let appIdFree = "1291224425"
-let appId = "1304954640"
-
-let debug = false // to config ads id
+#endif
 
 let isLightThemeKey = "isLightThemeKey"

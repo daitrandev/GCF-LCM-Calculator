@@ -64,17 +64,11 @@ class MainViewController: UIViewController {
         }
         
         navigationController?.navigationBar.topItem?.title = NSLocalizedString("MainTitle", comment: "")
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .plain, target: self, action: #selector(didTapHome))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "refresh"), style: .plain, target: self, action: #selector(didTapRefresh))
     }
     
     private func setupAds() {
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        
-        bannerView?.adUnitID = debug ? bannerAdsUnitIDTrial : bannerAdsUnitID
-        bannerView?.rootViewController = self
-        bannerView?.load(GADRequest())
-        bannerView?.delegate = self
+        bannerView = createAndLoadBannerAds()
         
         interstitial = createAndLoadInterstitial()
     }
@@ -96,18 +90,6 @@ class MainViewController: UIViewController {
         setNeedsStatusBarAppearanceUpdate()
         
         tableView.reloadData()
-    }
-    
-    @objc private func didTapHome() {
-        let menuViewController = MenuViewController()
-        menuViewController.delegate = self
-        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: menuViewController)
-        
-        SideMenuManager.default.menuLeftNavigationController?.navigationBar.backgroundColor = .blue
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-        SideMenuManager.default.menuFadeStatusBar = false
-        SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
     @objc private func didTapRefresh() {
@@ -142,55 +124,6 @@ extension MainViewController: MainTableViewCellDelegate {
     }
 }
 
-extension MainViewController: MenuViewControllerDelegate {
-    func presentMailComposer() {
-        let mailComposeViewController = configuredMailComposeViewController()
-        if MFMailComposeViewController.canSendMail() {
-            self.present(mailComposeViewController, animated: true, completion: nil)
-        }
-    }
-    
-    func presentRatingAction() {
-        let appIdString = isFreeVersion ? appIdFree : appId
-        rateApp(appId: appIdString) { success in
-            print("RateApp \(success)")
-        }
-    }
-    
-    func presentShareAction() {
-        let appIdString = isFreeVersion ? appIdFree : appId
-        let message: String = "https://itunes.apple.com/app/\(appIdString)"
-        let vc = UIActivityViewController(activityItems: [message], applicationActivities: [])
-        vc.popoverPresentationController?.sourceView = self.view
-        present(vc, animated: true)
-    }
-    
-    func changeTheme() {
-        isLightTheme = !isLightTheme
-        for i in 0..<cellModels.count {
-            cellModels[i].isLightTheme = isLightTheme
-        }
-        UserDefaults.standard.set(isLightTheme, forKey: isLightThemeKey)
-        loadColor(isLightTheme: isLightTheme)
-    }
-}
-
-extension MainViewController:  MFMailComposeViewControllerDelegate {
-    func configuredMailComposeViewController() -> MFMailComposeViewController {
-        let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self
-        
-        mailComposerVC.setToRecipients(["universappteam@gmail.com"])
-        mailComposerVC.setSubject("[GCF-LCM Calculator++ Feedback]")
-        
-        return mailComposerVC
-    }
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-}
-
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellModels.count
@@ -206,6 +139,16 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
+    private func createAndLoadBannerAds() -> GADBannerView {
+        let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        
+        bannerView.adUnitID = bannerAdsUnitID
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
+        return bannerView
+    }
 }
 
 extension MainViewController: UITextFieldDelegate {
@@ -214,31 +157,11 @@ extension MainViewController: UITextFieldDelegate {
         return true
     }
     
-    func rateApp(appId: String, completion: @escaping ((_ success: Bool)->())) {
-        guard let url = URL(string : "itms-apps://itunes.apple.com/app/" + appId) else {
-            completion(false)
-            return
-        }
-        guard #available(iOS 10, *) else {
-            completion(UIApplication.shared.openURL(url))
-            return
-        }
-        UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: completion)
-    }
-    
     func presentAlert(title: String, message: String, isUpgradeMessage: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""), style: .cancel, handler: {(action) in
             self.setNeedsStatusBarAppearanceUpdate()
         }))
-        if (isUpgradeMessage) {
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Upgrade", comment: ""), style: .default, handler: { (action) in
-                self.setNeedsStatusBarAppearanceUpdate()
-                self.rateApp(appId: appId) { success in
-                    print("RateApp \(success)")
-                }
-            }))
-        }
         
         present(alert, animated: true, completion: nil)
     }
@@ -267,39 +190,16 @@ extension MainViewController : GADBannerViewDelegate {
 
 extension MainViewController : GADInterstitialDelegate {
     private func createAndLoadInterstitial() -> GADInterstitial? {
-        interstitial = GADInterstitial(adUnitID: debug ? interstialAdsUnitIDTrial : interstialAdsUnitID)
-        
-        guard let interstitial = interstitial else {
-            return nil
-        }
+        let interstitial = GADInterstitial(adUnitID: interstialAdsUnitID)
         
         let request = GADRequest()
-        // Remove the following line before you upload the app
-        request.testDevices = [ kGADSimulatorID ]
         interstitial.load(request)
         interstitial.delegate = self
         
         return interstitial
     }
     
-    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
-        presentAlert(title: NSLocalizedString("Appname", comment: ""), message: NSLocalizedString("UpgradeMessage", comment: ""), isUpgradeMessage: true)
-    }
-    
-    func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
-        presentAlert(title: NSLocalizedString("Appname", comment: ""), message: NSLocalizedString("UpgradeMessage", comment: ""), isUpgradeMessage: true)
-    }
-    
     func interstitialDidReceiveAd(_ ad: GADInterstitial) {
         ad.present(fromRootViewController: self)
     }
-    
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        presentAlert(title: NSLocalizedString("Appname", comment: ""), message: NSLocalizedString("UpgradeMessage", comment: ""), isUpgradeMessage: true)
-    }
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

@@ -77,19 +77,14 @@ class MainTableViewCell: UITableViewCell {
         label.constraintTo(top: topAnchor, bottom: nil, left: contentView.leftAnchor, right: nil, topConstant: 8, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
         label.heightAnchor.constraint(equalToConstant: 25).isActive = true
         
-        guard let isFreeVersion = Bundle.main.infoDictionary?["isFreeVersion"] as? Bool else { return }
-        if isFreeVersion {
-            textField.constraintTo(top: label.bottomAnchor, bottom: bottomAnchor, left: contentView.leftAnchor, right: contentView.rightAnchor, topConstant: 0, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
-        } else {
-            addSubview(copyButton)
-            
-            textField.constraintTo(top: label.bottomAnchor, bottom: bottomAnchor, left: contentView.leftAnchor, right: copyButton.leftAnchor, topConstant: 0, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
-            
-            copyButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8).isActive = true
-            copyButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
-            copyButton.widthAnchor.constraint(equalTo: copyButton.heightAnchor).isActive = true
-            copyButton.heightAnchor.constraint(equalToConstant: 22).isActive = true
-        }
+        addSubview(copyButton)
+        
+        textField.constraintTo(top: label.bottomAnchor, bottom: bottomAnchor, left: contentView.leftAnchor, right: copyButton.leftAnchor, topConstant: 0, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
+        
+        copyButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8).isActive = true
+        copyButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
+        copyButton.widthAnchor.constraint(equalTo: copyButton.heightAnchor).isActive = true
+        copyButton.heightAnchor.constraint(equalToConstant: 22).isActive = true
         
         textField.addTarget(self, action: #selector(self.textFieldEditingChanged(_:)), for: .editingChanged)
         textField.delegate = self
@@ -116,7 +111,10 @@ class MainTableViewCell: UITableViewCell {
         
         guard let inputTextFieldText = sender.text else { return }
         
-        delegate?.updateInputText(inputTextFieldText: inputTextFieldText, separatedString: separatedString)
+        delegate?.updateInputText(
+            inputTextFieldText: inputTextFieldText,
+            separatedString: separatedString
+        )
     }
 }
 
@@ -133,9 +131,13 @@ extension MainTableViewCell: UITextFieldDelegate {
         
         if (string == " " && separatedString == ",") {
             return false
-        } else if (string == "," && separatedString == " ") {
+        }
+        
+        if (string == "," && separatedString == " ") {
             return false
-        } else if (string == " " || string == ",") {
+        }
+        
+        if (string == " " || string == ",") {
             separatedString = string
             return true
         }

@@ -10,73 +10,32 @@
 		232A8B5D1FA6C5E700A76143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232A8B5C1FA6C5E700A76143 /* Assets.xcassets */; };
 		232A8B6A1FA6CB6600A76143 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B691FA6CB6600A76143 /* MainTableViewCell.swift */; };
 		232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */; };
-		23751F8621AA66DF00E739BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B551FA6C5E700A76143 /* AppDelegate.swift */; };
-		23751F8721AA66DF00E739BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF0E712155115C0010CDFF /* Extensions.swift */; };
-		23751F8821AA66DF00E739BF /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B691FA6CB6600A76143 /* MainTableViewCell.swift */; };
-		23751F8921AA66DF00E739BF /* CalculatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */; };
-		23751F8A21AA66DF00E739BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B671FA6CA6200A76143 /* MainViewController.swift */; };
-		23751F8F21AA66DF00E739BF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E914191FA714D700F79C0E /* Localizable.strings */; };
-		23751F9321AA66DF00E739BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E914161FA714D200F79C0E /* InfoPlist.strings */; };
-		23751F9421AA66DF00E739BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232A8B5C1FA6C5E700A76143 /* Assets.xcassets */; };
 		23BF0E722155115C0010CDFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF0E712155115C0010CDFF /* Extensions.swift */; };
 		23E914141FA714D200F79C0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E914161FA714D200F79C0E /* InfoPlist.strings */; };
 		23E914171FA714D700F79C0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23E914191FA714D700F79C0E /* Localizable.strings */; };
-		FA0DADD42262DA8700299CD6 /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DADD02262DA8700299CD6 /* UISideMenuNavigationController.swift */; };
-		FA0DADD52262DA8700299CD6 /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DADD02262DA8700299CD6 /* UISideMenuNavigationController.swift */; };
-		FA0DADD62262DA8700299CD6 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DADD12262DA8700299CD6 /* SideMenuManager.swift */; };
-		FA0DADD72262DA8700299CD6 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DADD12262DA8700299CD6 /* SideMenuManager.swift */; };
-		FA0DADD82262DA8700299CD6 /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DADD22262DA8700299CD6 /* SideMenuTransition.swift */; };
-		FA0DADD92262DA8700299CD6 /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DADD22262DA8700299CD6 /* SideMenuTransition.swift */; };
-		FA0DADDA2262DA8700299CD6 /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DADD32262DA8700299CD6 /* UITableViewVibrantCell.swift */; };
-		FA0DADDB2262DA8700299CD6 /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DADD32262DA8700299CD6 /* UITableViewVibrantCell.swift */; };
-		FA3F9E272253AD9A00398FDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */; };
 		FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */; };
 		FAB0CCBA223373CB00102A8F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCB9223373CB00102A8F /* Constant.swift */; };
-		FAB0CCBB223373CB00102A8F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCB9223373CB00102A8F /* Constant.swift */; };
 		FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B551FA6C5E700A76143 /* AppDelegate.swift */; };
 		FAB0CCBD2233772800102A8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B671FA6CA6200A76143 /* MainViewController.swift */; };
 		FAB0CCC02233BD4700102A8F /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCBF2233BD4700102A8F /* CellModel.swift */; };
-		FAB0CCC12233BD4700102A8F /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCBF2233BD4700102A8F /* CellModel.swift */; };
-		FAB0CCC62233DB2D00102A8F /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCC42233DB2C00102A8F /* MenuTableViewCell.swift */; };
-		FAB0CCC72233DB2D00102A8F /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCC42233DB2C00102A8F /* MenuTableViewCell.swift */; };
-		FAB0CCC82233DB2D00102A8F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCC52233DB2C00102A8F /* MenuViewController.swift */; };
-		FAB0CCC92233DB2D00102A8F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCC52233DB2C00102A8F /* MenuViewController.swift */; };
 		FAB0CCCB2233DB6500102A8F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCCA2233DB6500102A8F /* Menu.swift */; };
-		FAB0CCCC2233DB6500102A8F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCCA2233DB6500102A8F /* Menu.swift */; };
 		FAD162A42262D840003BAA15 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1628E2262D840003BAA15 /* IQTextView.swift */; };
-		FAD162A52262D840003BAA15 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1628E2262D840003BAA15 /* IQTextView.swift */; };
 		FAD162A62262D840003BAA15 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162902262D840003BAA15 /* IQPreviousNextView.swift */; };
-		FAD162A72262D840003BAA15 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162902262D840003BAA15 /* IQPreviousNextView.swift */; };
 		FAD162A82262D840003BAA15 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162912262D840003BAA15 /* IQTitleBarButtonItem.swift */; };
-		FAD162A92262D840003BAA15 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162912262D840003BAA15 /* IQTitleBarButtonItem.swift */; };
 		FAD162AA2262D840003BAA15 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162922262D840003BAA15 /* IQBarButtonItem.swift */; };
-		FAD162AB2262D840003BAA15 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162922262D840003BAA15 /* IQBarButtonItem.swift */; };
 		FAD162AC2262D840003BAA15 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162932262D840003BAA15 /* IQToolbar.swift */; };
-		FAD162AD2262D840003BAA15 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162932262D840003BAA15 /* IQToolbar.swift */; };
 		FAD162AE2262D840003BAA15 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162942262D840003BAA15 /* IQUIView+IQKeyboardToolbar.swift */; };
-		FAD162AF2262D840003BAA15 /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162942262D840003BAA15 /* IQUIView+IQKeyboardToolbar.swift */; };
 		FAD162B02262D840003BAA15 /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162952262D840003BAA15 /* IQInvocation.swift */; };
-		FAD162B12262D840003BAA15 /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162952262D840003BAA15 /* IQInvocation.swift */; };
 		FAD162B22262D840003BAA15 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162972262D840003BAA15 /* IQKeyboardManagerConstantsInternal.swift */; };
-		FAD162B32262D840003BAA15 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162972262D840003BAA15 /* IQKeyboardManagerConstantsInternal.swift */; };
 		FAD162B42262D840003BAA15 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162982262D840003BAA15 /* IQKeyboardManagerConstants.swift */; };
-		FAD162B52262D840003BAA15 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162982262D840003BAA15 /* IQKeyboardManagerConstants.swift */; };
 		FAD162B62262D840003BAA15 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FAD1629A2262D840003BAA15 /* IQKeyboardManager.bundle */; };
-		FAD162B72262D840003BAA15 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FAD1629A2262D840003BAA15 /* IQKeyboardManager.bundle */; };
 		FAD162B82262D840003BAA15 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1629B2262D840003BAA15 /* IQKeyboardReturnKeyHandler.swift */; };
-		FAD162B92262D840003BAA15 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1629B2262D840003BAA15 /* IQKeyboardReturnKeyHandler.swift */; };
 		FAD162BA2262D840003BAA15 /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1629C2262D840003BAA15 /* IQKeyboardManager.swift */; };
-		FAD162BB2262D840003BAA15 /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1629C2262D840003BAA15 /* IQKeyboardManager.swift */; };
 		FAD162BC2262D840003BAA15 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1629F2262D840003BAA15 /* IQUIScrollView+Additions.swift */; };
-		FAD162BD2262D840003BAA15 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1629F2262D840003BAA15 /* IQUIScrollView+Additions.swift */; };
 		FAD162BE2262D840003BAA15 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162A02262D840003BAA15 /* IQUIViewController+Additions.swift */; };
-		FAD162BF2262D840003BAA15 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162A02262D840003BAA15 /* IQUIViewController+Additions.swift */; };
 		FAD162C02262D840003BAA15 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162A12262D840003BAA15 /* IQUITextFieldView+Additions.swift */; };
-		FAD162C12262D840003BAA15 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162A12262D840003BAA15 /* IQUITextFieldView+Additions.swift */; };
 		FAD162C22262D840003BAA15 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162A22262D840003BAA15 /* IQUIView+Hierarchy.swift */; };
-		FAD162C32262D840003BAA15 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162A22262D840003BAA15 /* IQUIView+Hierarchy.swift */; };
 		FAD162C42262D840003BAA15 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162A32262D840003BAA15 /* IQNSArray+Sort.swift */; };
-		FAD162C52262D840003BAA15 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD162A32262D840003BAA15 /* IQNSArray+Sort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,8 +46,6 @@
 		232A8B671FA6CA6200A76143 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		232A8B691FA6CB6600A76143 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorUtilities.swift; sourceTree = "<group>"; };
-		23751F9921AA66DF00E739BF /* GCF & LCM Calculator Free.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GCF & LCM Calculator Free.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		23751F9A21AA66DF00E739BF /* InfoFree.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InfoFree.plist; sourceTree = "<group>"; };
 		23BF0E712155115C0010CDFF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		23C135211FA868A200659196 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "GCF & GCM Calculator++/en.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		23C135221FA868F900659196 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "GCF & GCM Calculator++/en.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -118,15 +75,9 @@
 		23D6D8A41FA9B3FD00243F5D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "GCF & GCM Calculator++/zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		23D6D8A51FA9B40300243F5D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "GCF & GCM Calculator++/zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		23D6D8A61FA9B40300243F5D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "GCF & GCM Calculator++/zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		FA0DADD02262DA8700299CD6 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISideMenuNavigationController.swift; sourceTree = "<group>"; };
-		FA0DADD12262DA8700299CD6 /* SideMenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuManager.swift; sourceTree = "<group>"; };
-		FA0DADD22262DA8700299CD6 /* SideMenuTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTransition.swift; sourceTree = "<group>"; };
-		FA0DADD32262DA8700299CD6 /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewVibrantCell.swift; sourceTree = "<group>"; };
 		FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB0CCB9223373CB00102A8F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FAB0CCBF2233BD4700102A8F /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
-		FAB0CCC42233DB2C00102A8F /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		FAB0CCC52233DB2C00102A8F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FAB0CCCA2233DB6500102A8F /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		FAD1628E2262D840003BAA15 /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
 		FAD162902262D840003BAA15 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQPreviousNextView.swift; sourceTree = "<group>"; };
@@ -156,13 +107,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		23751F8B21AA66DF00E739BF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -171,6 +115,7 @@
 			children = (
 				232A8B541FA6C5E700A76143 /* GCF & GCM Calculator++ */,
 				232A8B531FA6C5E700A76143 /* Products */,
+				C822051CC48ECB8809DFA71C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				232A8B521FA6C5E700A76143 /* GCF & LCM Calculator.app */,
-				23751F9921AA66DF00E739BF /* GCF & LCM Calculator Free.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,20 +142,15 @@
 				23BF0E712155115C0010CDFF /* Extensions.swift */,
 				232A8B5C1FA6C5E700A76143 /* Assets.xcassets */,
 				232A8B611FA6C5E700A76143 /* Info.plist */,
-				23751F9A21AA66DF00E739BF /* InfoFree.plist */,
 			);
 			path = "GCF & GCM Calculator++";
 			sourceTree = "<group>";
 		};
-		FA0DADCF2262DA8700299CD6 /* SideMenu */ = {
+		C822051CC48ECB8809DFA71C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FA0DADD02262DA8700299CD6 /* UISideMenuNavigationController.swift */,
-				FA0DADD12262DA8700299CD6 /* SideMenuManager.swift */,
-				FA0DADD22262DA8700299CD6 /* SideMenuTransition.swift */,
-				FA0DADD32262DA8700299CD6 /* UITableViewVibrantCell.swift */,
 			);
-			path = SideMenu;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		FA14C5852234C2090044A026 /* Main */ = {
@@ -223,19 +162,9 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		FA14C5862234C2120044A026 /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				FAB0CCC42233DB2C00102A8F /* MenuTableViewCell.swift */,
-				FAB0CCC52233DB2C00102A8F /* MenuViewController.swift */,
-			);
-			path = Menu;
-			sourceTree = "<group>";
-		};
 		FAB0CCC22233DAF900102A8F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FA14C5862234C2120044A026 /* Menu */,
 				FA14C5852234C2090044A026 /* Main */,
 			);
 			path = Controller;
@@ -253,7 +182,6 @@
 		FAD1628B2262D830003BAA15 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				FA0DADCF2262DA8700299CD6 /* SideMenu */,
 				FAD1628C2262D840003BAA15 /* IQKeyboardManagerSwift */,
 			);
 			path = Vendors;
@@ -344,23 +272,6 @@
 			productReference = 232A8B521FA6C5E700A76143 /* GCF & LCM Calculator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		23751F8221AA66DF00E739BF /* GCF & LCM Calculator Free */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 23751F9621AA66DF00E739BF /* Build configuration list for PBXNativeTarget "GCF & LCM Calculator Free" */;
-			buildPhases = (
-				23751F8421AA66DF00E739BF /* Sources */,
-				23751F8B21AA66DF00E739BF /* Frameworks */,
-				23751F8E21AA66DF00E739BF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "GCF & LCM Calculator Free";
-			productName = "GCF & GCM Calculator++";
-			productReference = 23751F9921AA66DF00E739BF /* GCF & LCM Calculator Free.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -376,9 +287,6 @@
 						DevelopmentTeam = B8SW848K42;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
-					};
-					23751F8221AA66DF00E739BF = {
-						DevelopmentTeam = B8SW848K42;
 					};
 				};
 			};
@@ -408,7 +316,6 @@
 			projectRoot = "";
 			targets = (
 				232A8B511FA6C5E700A76143 /* GCF & LCM Calculator */,
-				23751F8221AA66DF00E739BF /* GCF & LCM Calculator Free */,
 			);
 		};
 /* End PBXProject section */
@@ -426,18 +333,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		23751F8E21AA66DF00E739BF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FAD162B72262D840003BAA15 /* IQKeyboardManager.bundle in Resources */,
-				23751F8F21AA66DF00E739BF /* Localizable.strings in Resources */,
-				FA3F9E272253AD9A00398FDD /* LaunchScreen.storyboard in Resources */,
-				23751F9321AA66DF00E739BF /* InfoPlist.strings in Resources */,
-				23751F9421AA66DF00E739BF /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -446,14 +341,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BF0E722155115C0010CDFF /* Extensions.swift in Sources */,
-				FAB0CCC82233DB2D00102A8F /* MenuViewController.swift in Sources */,
-				FA0DADDA2262DA8700299CD6 /* UITableViewVibrantCell.swift in Sources */,
 				FAD162AA2262D840003BAA15 /* IQBarButtonItem.swift in Sources */,
 				FAD162C22262D840003BAA15 /* IQUIView+Hierarchy.swift in Sources */,
 				FAD162C42262D840003BAA15 /* IQNSArray+Sort.swift in Sources */,
-				FA0DADD62262DA8700299CD6 /* SideMenuManager.swift in Sources */,
 				FAD162A82262D840003BAA15 /* IQTitleBarButtonItem.swift in Sources */,
-				FA0DADD42262DA8700299CD6 /* UISideMenuNavigationController.swift in Sources */,
 				232A8B6A1FA6CB6600A76143 /* MainTableViewCell.swift in Sources */,
 				232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */,
 				FAD162BA2262D840003BAA15 /* IQKeyboardManager.swift in Sources */,
@@ -464,10 +355,8 @@
 				FAD162BC2262D840003BAA15 /* IQUIScrollView+Additions.swift in Sources */,
 				FAD162AC2262D840003BAA15 /* IQToolbar.swift in Sources */,
 				FAB0CCBD2233772800102A8F /* MainViewController.swift in Sources */,
-				FA0DADD82262DA8700299CD6 /* SideMenuTransition.swift in Sources */,
 				FAD162C02262D840003BAA15 /* IQUITextFieldView+Additions.swift in Sources */,
 				FAD162B22262D840003BAA15 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
-				FAB0CCC62233DB2D00102A8F /* MenuTableViewCell.swift in Sources */,
 				FAD162B42262D840003BAA15 /* IQKeyboardManagerConstants.swift in Sources */,
 				FAD162BE2262D840003BAA15 /* IQUIViewController+Additions.swift in Sources */,
 				FAD162A62262D840003BAA15 /* IQPreviousNextView.swift in Sources */,
@@ -475,43 +364,6 @@
 				FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */,
 				FAD162AE2262D840003BAA15 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
 				FAB0CCBA223373CB00102A8F /* Constant.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		23751F8421AA66DF00E739BF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FAB0CCBB223373CB00102A8F /* Constant.swift in Sources */,
-				FAB0CCC92233DB2D00102A8F /* MenuViewController.swift in Sources */,
-				FA0DADDB2262DA8700299CD6 /* UITableViewVibrantCell.swift in Sources */,
-				FAD162AB2262D840003BAA15 /* IQBarButtonItem.swift in Sources */,
-				FAD162C32262D840003BAA15 /* IQUIView+Hierarchy.swift in Sources */,
-				FAD162C52262D840003BAA15 /* IQNSArray+Sort.swift in Sources */,
-				FA0DADD72262DA8700299CD6 /* SideMenuManager.swift in Sources */,
-				FAD162A92262D840003BAA15 /* IQTitleBarButtonItem.swift in Sources */,
-				FA0DADD52262DA8700299CD6 /* UISideMenuNavigationController.swift in Sources */,
-				23751F8621AA66DF00E739BF /* AppDelegate.swift in Sources */,
-				FAB0CCC12233BD4700102A8F /* CellModel.swift in Sources */,
-				FAD162BB2262D840003BAA15 /* IQKeyboardManager.swift in Sources */,
-				FAD162B92262D840003BAA15 /* IQKeyboardReturnKeyHandler.swift in Sources */,
-				FAD162B12262D840003BAA15 /* IQInvocation.swift in Sources */,
-				FAB0CCCC2233DB6500102A8F /* Menu.swift in Sources */,
-				23751F8721AA66DF00E739BF /* Extensions.swift in Sources */,
-				FAD162BD2262D840003BAA15 /* IQUIScrollView+Additions.swift in Sources */,
-				FAD162AD2262D840003BAA15 /* IQToolbar.swift in Sources */,
-				FAB0CCC72233DB2D00102A8F /* MenuTableViewCell.swift in Sources */,
-				FA0DADD92262DA8700299CD6 /* SideMenuTransition.swift in Sources */,
-				FAD162C12262D840003BAA15 /* IQUITextFieldView+Additions.swift in Sources */,
-				FAD162B32262D840003BAA15 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
-				23751F8821AA66DF00E739BF /* MainTableViewCell.swift in Sources */,
-				FAD162B52262D840003BAA15 /* IQKeyboardManagerConstants.swift in Sources */,
-				FAD162BF2262D840003BAA15 /* IQUIViewController+Additions.swift in Sources */,
-				FAD162A72262D840003BAA15 /* IQPreviousNextView.swift in Sources */,
-				FAD162A52262D840003BAA15 /* IQTextView.swift in Sources */,
-				23751F8921AA66DF00E739BF /* CalculatorUtilities.swift in Sources */,
-				FAD162AF2262D840003BAA15 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
-				23751F8A21AA66DF00E739BF /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,7 +543,8 @@
 				INFOPLIST_FILE = "GCF & GCM Calculator++/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DaiTranDev.GCF-LCM-Pro";
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DaiTranDev.GCF-LCM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -710,47 +563,11 @@
 				INFOPLIST_FILE = "GCF & GCM Calculator++/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DaiTranDev.GCF-LCM-Pro";
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DaiTranDev.GCF-LCM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		23751F9721AA66DF00E739BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconFree;
-				DEVELOPMENT_TEAM = B8SW848K42;
-				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/GCF & GCM Calculator++/InfoFree.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DaiTranDev.GCF-LCM";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-			};
-			name = Debug;
-		};
-		23751F9821AA66DF00E739BF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconFree;
-				DEVELOPMENT_TEAM = B8SW848K42;
-				ENABLE_BITCODE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/GCF & GCM Calculator++/InfoFree.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DaiTranDev.GCF-LCM";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -771,15 +588,6 @@
 			buildConfigurations = (
 				232A8B651FA6C5E700A76143 /* Debug */,
 				232A8B661FA6C5E700A76143 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		23751F9621AA66DF00E739BF /* Build configuration list for PBXNativeTarget "GCF & LCM Calculator Free" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				23751F9721AA66DF00E739BF /* Debug */,
-				23751F9821AA66DF00E739BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
