@@ -9,7 +9,14 @@
 import UIKit
 
 extension UIView {
-    func constraintTo(top: NSLayoutYAxisAnchor?, bottom: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, right: NSLayoutXAxisAnchor?, topConstant: CGFloat, bottomConstant: CGFloat, leftConstant: CGFloat, rightConstant: CGFloat) {
+    func constraintTo(top: NSLayoutYAxisAnchor?,
+                      bottom: NSLayoutYAxisAnchor?,
+                      left: NSLayoutXAxisAnchor?,
+                      right: NSLayoutXAxisAnchor?,
+                      topConstant: CGFloat = 0,
+                      bottomConstant: CGFloat = 0,
+                      leftConstant: CGFloat = 0,
+                      rightConstant: CGFloat = 0) {
         
         if let top = top {
             topAnchor.constraint(equalTo: top, constant: topConstant).isActive = true

@@ -17,7 +17,6 @@ class MainViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
@@ -27,44 +26,33 @@ class MainViewController: UIViewController {
     }()
     
     lazy var cellModels = [
-        CellModel(labelText: NSLocalizedString("Input", comment: ""), textFieldText: nil, textFieldPlaceHolder: NSLocalizedString("InputPlaceHolder", comment: ""), isLightTheme: isLightTheme, isEnabled: true),
-        CellModel(labelText: NSLocalizedString("GCF", comment: ""), textFieldText: nil, textFieldPlaceHolder: NSLocalizedString("GCFPlaceHolder", comment: ""), isLightTheme: isLightTheme, isEnabled: false),
-        CellModel(labelText: NSLocalizedString("LCM", comment: ""), textFieldText: nil, textFieldPlaceHolder: NSLocalizedString("LCMPlaceHolder", comment: ""), isLightTheme: isLightTheme, isEnabled: false)
+        CellModel(labelText: "Input", textFieldText: nil, textFieldPlaceHolder: "InputPlaceHolder", isEnabled: true),
+        CellModel(labelText: "GCF", textFieldText: nil, textFieldPlaceHolder: "Greatest common factor", isEnabled: false),
+        CellModel(labelText: "LCM", textFieldText: nil, textFieldPlaceHolder: "Least common multiple", isEnabled: false)
     ]
     
-    let isFreeVersion = Bundle.main.infoDictionary?["isFreeVersion"] as? Bool ?? true
-        
-    var isLightTheme: Bool = {
-        if let isLightTheme = UserDefaults.standard.object(forKey: isLightThemeKey) as? Bool {
-            return isLightTheme
-        }
-        UserDefaults.standard.set(true, forKey: isLightThemeKey)
-        return true
-    }()
+    private var bannerView: GADBannerView?
     
-    var bannerView: GADBannerView?
-    
-    var interstitial: GADInterstitial?
-        
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return isLightTheme ? .default : .lightContent
-    }
+    private var interstitial: GADInterstitial?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(tableView)
         
-        tableView.constraintTo(top: view.layoutMarginsGuide.topAnchor, bottom: view.layoutMarginsGuide.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0)
+        tableView.constraintTo(top: view.layoutMarginsGuide.topAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0)
         
-        loadColor(isLightTheme: isLightTheme)
+        loadTheme()
         
-        if isFreeVersion {
-            setupAds()
-        }
+        setupAds()
         
-        navigationController?.navigationBar.topItem?.title = NSLocalizedString("MainTitle", comment: "")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "refresh"), style: .plain, target: self, action: #selector(didTapRefresh))
+        navigationController?.navigationBar.topItem?.title = "GCF & LCM Calculator"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "refresh"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapRefresh)
+        )
     }
     
     private func setupAds() {
@@ -73,23 +61,13 @@ class MainViewController: UIViewController {
         interstitial = createAndLoadInterstitial()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        if isFreeVersion {
-            presentAlert(title: NSLocalizedString("Appname", comment: ""), message: NSLocalizedString("UpgradeMessage", comment: ""), isUpgradeMessage: true)
+    private func loadTheme() {
+        if #available(iOS 13, *) {
+            navigationController?.navigationBar.barTintColor = .systemBackground
+        } else {
+            navigationController?.navigationBar.barTintColor = .white
         }
-    }
-    
-    private func loadColor(isLightTheme: Bool) {
-        navigationController?.navigationBar.barTintColor = isLightTheme ? .white : .black
         navigationController?.navigationBar.tintColor = UIColor.orange
-        
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: isLightTheme ? UIColor.black : UIColor.white]
-        
-        view.backgroundColor = isLightTheme ? .white : .black
-        
-        setNeedsStatusBarAppearanceUpdate()
-        
-        tableView.reloadData()
     }
     
     @objc private func didTapRefresh() {
@@ -159,7 +137,7 @@ extension MainViewController: UITextFieldDelegate {
     
     func presentAlert(title: String, message: String, isUpgradeMessage: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""), style: .cancel, handler: {(action) in
+        alert.addAction(UIAlertAction(title: "Done", style: .cancel, handler: {(action) in
             self.setNeedsStatusBarAppearanceUpdate()
         }))
         

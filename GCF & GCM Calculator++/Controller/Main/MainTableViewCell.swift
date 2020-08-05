@@ -56,7 +56,6 @@ class MainTableViewCell: UITableViewCell {
             guard let cellModel = cellModel else { return }
             
             textField.placeholder = cellModel.textFieldPlaceHolder
-            textField.keyboardAppearance = cellModel.isLightTheme ? .light : .dark
             textField.backgroundColor = cellModel.isEnabled ? .white : .gray
             textField.isEnabled = cellModel.isEnabled
             textField.text = cellModel.textFieldText
@@ -94,9 +93,9 @@ class MainTableViewCell: UITableViewCell {
     @objc func didTapCopy() {
         if let textFieldText = textField.text, !textFieldText.isEmpty {
             UIPasteboard.general.string = textFieldText
-            delegate?.presentCopiedAlert(message: NSLocalizedString("Copied", comment: ""))
+            delegate?.presentCopiedAlert(message: "Copied")
         } else {
-            delegate?.presentCopiedAlert(message: NSLocalizedString("Nothing to copy", comment: ""))
+            delegate?.presentCopiedAlert(message: "Nothing to copy")
         }
     }
     
