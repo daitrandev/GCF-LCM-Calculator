@@ -17,6 +17,7 @@ class MainTableViewCell: UITableViewCell {
 
     private lazy var textField: UITextField = {
         let textField = UITextField()
+        textField.textColor = .black
         textField.font = UIFont(name: "Roboto-Regular", size: 18)
         textField.layer.borderWidth = 2
         textField.layer.cornerRadius = 10
