@@ -17,6 +17,7 @@ class MainTableViewCell: UITableViewCell {
 
     private lazy var textField: UITextField = {
         let textField = UITextField()
+        textField.font = UIFont(name: "Roboto-Regular", size: 18)
         textField.layer.borderWidth = 2
         textField.layer.cornerRadius = 10
         textField.set(borderColor: UIColor.orange)
@@ -33,7 +34,7 @@ class MainTableViewCell: UITableViewCell {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont(name: "Roboto-Medium", size: 18)
         label.textColor = .orange
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

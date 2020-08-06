@@ -58,9 +58,9 @@ class MainViewController: UIViewController {
         
         loadTheme()
         
-//        setupAds()
+        setupAds()
         
-        navigationController?.navigationBar.topItem?.title = "GCF & LCM Calculator"
+        title = "GCF & LCM Calculator"
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(named: "refresh"),
             style: .plain,

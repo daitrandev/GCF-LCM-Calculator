@@ -22,6 +22,11 @@
 		D76E995224DAF5A80005D424 /* MessageDialogPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995024DAF5A80005D424 /* MessageDialogPresentable.swift */; };
 		D76E995424DAF6210005D424 /* GlobalKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995324DAF6210005D424 /* GlobalKeychain.swift */; };
 		D76E995724DAF6520005D424 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995624DAF6520005D424 /* KeychainKey.swift */; };
+		F8416BCA24DB8360008267C6 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8416BC624DB835F008267C6 /* Roboto-Medium.ttf */; };
+		F8416BCB24DB8360008267C6 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8416BC724DB835F008267C6 /* Roboto-Light.ttf */; };
+		F8416BCC24DB8360008267C6 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8416BC824DB835F008267C6 /* Roboto-Regular.ttf */; };
+		F8416BCD24DB8360008267C6 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8416BC924DB835F008267C6 /* Roboto-Bold.ttf */; };
+		F8416BCF24DB83B8008267C6 /* UIFont+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416BCE24DB83B8008267C6 /* UIFont+Utils.swift */; };
 		FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */; };
 		FAB0CCBA223373CB00102A8F /* AdsUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCB9223373CB00102A8F /* AdsUnit.swift */; };
 		FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B551FA6C5E700A76143 /* AppDelegate.swift */; };
@@ -46,6 +51,11 @@
 		D76E995024DAF5A80005D424 /* MessageDialogPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDialogPresentable.swift; sourceTree = "<group>"; };
 		D76E995324DAF6210005D424 /* GlobalKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalKeychain.swift; sourceTree = "<group>"; };
 		D76E995624DAF6520005D424 /* KeychainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
+		F8416BC624DB835F008267C6 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		F8416BC724DB835F008267C6 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		F8416BC824DB835F008267C6 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		F8416BC924DB835F008267C6 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		F8416BCE24DB83B8008267C6 /* UIFont+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Utils.swift"; sourceTree = "<group>"; };
 		FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB0CCB9223373CB00102A8F /* AdsUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsUnit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,9 +97,9 @@
 				FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */,
 				FAB0CCB9223373CB00102A8F /* AdsUnit.swift */,
 				232A8B551FA6C5E700A76143 /* AppDelegate.swift */,
-				232A8B5C1FA6C5E700A76143 /* Assets.xcassets */,
 				FAB0CCC22233DAF900102A8F /* Controllers */,
 				D76E995524DAF6480005D424 /* Models */,
+				F8416BC424DB833F008267C6 /* Resources */,
 				D76E993724DADCE10005D424 /* Utils */,
 			);
 			path = "GCF & GCM Calculator++";
@@ -118,6 +128,7 @@
 				D76E995024DAF5A80005D424 /* MessageDialogPresentable.swift */,
 				D76E994D24DAF57C0005D424 /* LoadingButton.swift */,
 				D76E993924DADCFD0005D424 /* UIView+Utils.swift */,
+				F8416BCE24DB83B8008267C6 /* UIFont+Utils.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -147,6 +158,26 @@
 				D76E995624DAF6520005D424 /* KeychainKey.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F8416BC424DB833F008267C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F8416BC524DB835F008267C6 /* Fonts */,
+				232A8B5C1FA6C5E700A76143 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F8416BC524DB835F008267C6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F8416BC624DB835F008267C6 /* Roboto-Medium.ttf */,
+				F8416BC724DB835F008267C6 /* Roboto-Light.ttf */,
+				F8416BC824DB835F008267C6 /* Roboto-Regular.ttf */,
+				F8416BC924DB835F008267C6 /* Roboto-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		FA14C5852234C2090044A026 /* Main */ = {
@@ -237,7 +268,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8416BCD24DB8360008267C6 /* Roboto-Bold.ttf in Resources */,
+				F8416BCC24DB8360008267C6 /* Roboto-Regular.ttf in Resources */,
+				F8416BCA24DB8360008267C6 /* Roboto-Medium.ttf in Resources */,
 				D76E994524DAF3DD0005D424 /* PurchasingPopupViewController.xib in Resources */,
+				F8416BCB24DB8360008267C6 /* Roboto-Light.ttf in Resources */,
 				FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */,
 				232A8B5D1FA6C5E700A76143 /* Assets.xcassets in Resources */,
 			);
@@ -251,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76E995424DAF6210005D424 /* GlobalKeychain.swift in Sources */,
+				F8416BCF24DB83B8008267C6 /* UIFont+Utils.swift in Sources */,
 				232A8B6A1FA6CB6600A76143 /* MainTableViewCell.swift in Sources */,
 				D76E995124DAF5A80005D424 /* HUDPresentable.swift in Sources */,
 				232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */,

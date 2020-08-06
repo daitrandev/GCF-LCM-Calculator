@@ -18,11 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UIFont.loadCustomFonts()
+        
         IQKeyboardManager.shared.enable = true
         
         window = UIWindow()
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: MainViewController())
+        window?.rootViewController =
+            UINavigationController(rootViewController: MainViewController())
         
         if UserDefaults.standard.object(forKey: "isFirstRun") == nil {
             GlobalKeychain.clear(for: KeychainKey.isPurchased)
