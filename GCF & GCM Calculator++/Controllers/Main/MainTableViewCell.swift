@@ -55,8 +55,13 @@ class MainTableViewCell: UITableViewCell {
     private var item: MainViewModel.CellLayoutItem? {
         didSet {
             guard let item = item else { return }
-            
-            textField.placeholder = item.textFieldPlaceHolder
+            textField.attributedPlaceholder = NSAttributedString(
+                string: item.textFieldPlaceHolder,
+                attributes: [
+                    .font: UIFont(name: "Roboto-Regular", size: 18)!,
+                    .foregroundColor: UIColor.lightGray
+                ]
+            )
             textField.backgroundColor = item.isEnabled ? .white : .gray
             textField.isEnabled = item.isEnabled
             textField.text = item.textFieldText
@@ -77,7 +82,7 @@ class MainTableViewCell: UITableViewCell {
         
         addSubview(copyButton)
         
-        textField.constraintTo(top: label.bottomAnchor, bottom: bottomAnchor, left: contentView.leftAnchor, right: copyButton.leftAnchor, topConstant: 0, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
+        textField.constraintTo(top: label.bottomAnchor, bottom: bottomAnchor, left: contentView.leftAnchor, right: copyButton.leftAnchor, bottomConstant: -8, leftConstant: 8, rightConstant: -8)
         
         copyButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8).isActive = true
         copyButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true

@@ -47,6 +47,22 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.delegate = self
+        setupViews()
+        loadTheme()
+        setupAds()
+        
+        title = "GCF & LCM Calculator"
+    }
+    
+    private func setupAds() {
+        if !viewModel.isPurchased {
+            bannerView = createAndLoadBannerAds()
+            
+            interstitial = createAndLoadInterstitial()
+        }
+    }
+    
+    private func setupViews() {
         view.addSubview(tableView)
         
         tableView.constraintTo(
@@ -56,36 +72,38 @@ class MainViewController: UIViewController {
             right: view.rightAnchor
         )
         
-        loadTheme()
+        navigationController?.navigationBar.isTranslucent = false
         
-        setupAds()
-        
-        title = "GCF & LCM Calculator"
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(named: "refresh"),
             style: .plain,
             target: self,
             action: #selector(didTapRefresh)
         )
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "unlock"),
-            style: .plain,
-            target: self,
-            action: #selector(didTapUnlock)
-        )
-    }
-    
-    private func setupAds() {
-        bannerView = createAndLoadBannerAds()
         
-        interstitial = createAndLoadInterstitial()
+        if !viewModel.isPurchased {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(
+                image: UIImage(named: "unlock"),
+                style: .plain,
+                target: self,
+                action: #selector(didTapUnlock)
+            )
+        }
     }
     
     private func loadTheme() {
         if #available(iOS 13, *) {
             navigationController?.navigationBar.barTintColor = .systemBackground
+            navigationController?.navigationBar.titleTextAttributes = [
+                .foregroundColor: UIColor.label,
+                .font: UIFont(name: "Roboto-Bold", size: 18)!
+            ]
         } else {
             navigationController?.navigationBar.barTintColor = .white
+            navigationController?.navigationBar.titleTextAttributes = [
+                .foregroundColor: UIColor.black,
+                .font: UIFont(name: "Roboto-Bold", size: 18)!
+            ]
         }
         navigationController?.navigationBar.tintColor = UIColor.orange
     }

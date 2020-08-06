@@ -11,6 +11,7 @@ protocol MainViewModelDelegate: class {
 }
 
 protocol MainViewModelType {
+    var isPurchased: Bool { get }
     var delegate: MainViewModelDelegate? { get set }
     var cellLayoutItems: [MainViewModel.CellLayoutItem] { get }
     func clear()
@@ -31,12 +32,16 @@ class MainViewModel: MainViewModelType {
         }
     }
     
+    var isPurchased: Bool {
+        GlobalKeychain.getBool(for: KeychainKey.isPurchased) ?? false
+    }
+    
     weak var delegate: MainViewModelDelegate?
     
     init() {
         cellLayoutItems = [
             CellLayoutItem(
-                labelText: "Input",
+                labelText: "INPUT",
                 textFieldText: nil,
                 textFieldPlaceHolder: "Numbers seperate by spaces or commas",
                 isEnabled: true
