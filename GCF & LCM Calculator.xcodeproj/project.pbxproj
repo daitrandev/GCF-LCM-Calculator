@@ -83,13 +83,13 @@
 		232A8B541FA6C5E700A76143 /* GCF & GCM Calculator++ */ = {
 			isa = PBXGroup;
 			children = (
-				D76E995524DAF6480005D424 /* Models */,
 				232A8B611FA6C5E700A76143 /* Info.plist */,
 				FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */,
 				FAB0CCB9223373CB00102A8F /* AdsUnit.swift */,
 				232A8B551FA6C5E700A76143 /* AppDelegate.swift */,
 				232A8B5C1FA6C5E700A76143 /* Assets.xcassets */,
 				FAB0CCC22233DAF900102A8F /* Controllers */,
+				D76E995524DAF6480005D424 /* Models */,
 				D76E993724DADCE10005D424 /* Utils */,
 			);
 			path = "GCF & GCM Calculator++";

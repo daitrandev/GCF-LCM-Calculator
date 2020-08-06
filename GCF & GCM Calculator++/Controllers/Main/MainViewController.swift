@@ -49,11 +49,16 @@ class MainViewController: UIViewController {
         viewModel.delegate = self
         view.addSubview(tableView)
         
-        tableView.constraintTo(top: view.layoutMarginsGuide.topAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0)
+        tableView.constraintTo(
+            top: view.layoutMarginsGuide.topAnchor,
+            bottom: view.bottomAnchor,
+            left: view.leftAnchor,
+            right: view.rightAnchor
+        )
         
         loadTheme()
         
-        setupAds()
+//        setupAds()
         
         navigationController?.navigationBar.topItem?.title = "GCF & LCM Calculator"
         navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -61,6 +66,12 @@ class MainViewController: UIViewController {
             style: .plain,
             target: self,
             action: #selector(didTapRefresh)
+        )
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "unlock"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapUnlock)
         )
     }
     
@@ -79,8 +90,22 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.orange
     }
     
+    @objc private func didTapUnlock() {
+        let vc = PurchasingPopupViewController()
+        vc.delegate = self
+        present(vc, animated: true)
+    }
+    
     @objc private func didTapRefresh() {
         viewModel.clear()
+    }
+}
+
+extension MainViewController: PurchasingPopupViewControllerDelegate {
+    func removeAds() {
+        bannerView?.removeFromSuperview()
+        tableView.tableHeaderView = nil
+        navigationItem.leftBarButtonItem = nil
     }
 }
 
@@ -109,7 +134,7 @@ extension MainViewController: MainTableViewCellDelegate {
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.cellLayoutItems.count
+        viewModel.cellLayoutItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -126,7 +151,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        100
     }
     
     private func createAndLoadBannerAds() -> GADBannerView {

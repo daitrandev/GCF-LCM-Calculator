@@ -18,7 +18,7 @@ class MainTableViewCell: UITableViewCell {
     private lazy var textField: UITextField = {
         let textField = UITextField()
         textField.layer.borderWidth = 2
-        textField.layer.cornerRadius = 5
+        textField.layer.cornerRadius = 10
         textField.set(borderColor: UIColor.orange)
         textField.textAlignment = .center
         textField.layer.masksToBounds = true

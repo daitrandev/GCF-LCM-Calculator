@@ -27,7 +27,7 @@ class PurchasingPopupViewModel: PurchasingPopupViewModelType {
     
     func purchaseAds() {
         delegate?.showLoading()
-        SwiftyStoreKit.purchaseProduct("com.daitrandev.ASCIIConverter.removeads") { result in
+        SwiftyStoreKit.purchaseProduct("com.daitrandev.GCF_LCM.removeads") { result in
             self.delegate?.hideLoading()
             switch result {
             case .success(let purchase):
