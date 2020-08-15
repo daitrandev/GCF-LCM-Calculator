@@ -11,21 +11,14 @@ import MessageUI
 import GoogleMobileAds
 
 class MainViewController: UIViewController {
+    @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet var tableViewHeightConstraint: NSLayoutConstraint!
+    
     private let cellId = "cellId"
     
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.separatorStyle = .none
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.allowsSelection = false
-        tableView.register(
-            MainTableViewCell.self,
-            forCellReuseIdentifier: cellId
-        )
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
+    private var contentSizeObserver: NSKeyValueObservation?
     
     private var bannerView: GADBannerView?
     
@@ -33,10 +26,12 @@ class MainViewController: UIViewController {
     
     private var viewModel: MainViewModelType
     
-    override init(nibName nibNameOrNil: String?,
-                  bundle nibBundleOrNil: Bundle?) {
+    init() {
         viewModel = MainViewModel()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(
+            nibName: String(describing: MainViewController.self),
+            bundle: .main
+        )
     }
     
     required init?(coder: NSCoder) {
@@ -47,11 +42,16 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.delegate = self
+        
         setupViews()
         loadTheme()
         setupAds()
         
         title = "GCF & LCM Calculator"
+    }
+    
+    deinit {
+        contentSizeObserver?.invalidate()
     }
     
     private func setupAds() {
@@ -63,17 +63,28 @@ class MainViewController: UIViewController {
     }
     
     private func setupViews() {
-        view.addSubview(tableView)
-        
-        tableView.constraintTo(
-            top: view.layoutMarginsGuide.topAnchor,
-            bottom: view.bottomAnchor,
-            left: view.leftAnchor,
-            right: view.rightAnchor
+        tableView.register(
+            UINib(nibName: String(describing: MainCell.self), bundle: .main),
+            forCellReuseIdentifier: cellId
         )
+        tableView.dataSource = self
+        
+        contentSizeObserver = tableView
+            .observe(\.contentSize) { [weak self] (tableView, change) in
+                self?.tableViewHeightConstraint.constant = tableView.contentSize.height
+            }
+        
+        inputTextField.attributedPlaceholder = NSAttributedString(
+            string: "Numbers seperate by spaces or commas",
+            attributes: [
+                NSAttributedString.Key.foregroundColor: UIColor.lightGray
+            ]
+        )
+        inputTextField.delegate = self
+        inputTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
         
         navigationController?.navigationBar.isTranslucent = false
-        
+                
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(named: "refresh"),
             style: .plain,
@@ -115,7 +126,60 @@ class MainViewController: UIViewController {
     }
     
     @objc private func didTapRefresh() {
+        inputTextField.text = nil
         viewModel.clear()
+    }
+    
+    @objc func textFieldEditingChanged(_ sender: UITextField) {
+        if sender.text!.contains(",") {
+            viewModel.separator = ","
+        } else if sender.text!.contains(" ") {
+            viewModel.separator = " "
+        } else {
+            viewModel.separator = ""
+        }
+        viewModel.didChange(inputString: sender.text!)
+    }
+}
+
+extension MainViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.isEmpty {
+            return true
+        }
+        
+        if let lastCharacter = textField.text!.last,
+            (String(lastCharacter) == " " || String(lastCharacter) == ",")
+                && (string == " " || string == ",") {
+            return false
+        }
+        
+        if (string == " " && viewModel.separator == ",") {
+            return false
+        }
+        
+        if (string == "," && viewModel.separator == " ") {
+            return false
+        }
+        
+        if (string == " " || string == ",") && viewModel.separator == "" {
+            return true
+        }
+        
+        if string != " " && string != "," {
+            for character in string {
+                if (!"0123456789".contains(character)) {
+                    return false
+                }
+            }
+        }
+        
+        return true
     }
 }
 
@@ -129,23 +193,22 @@ extension MainViewController: PurchasingPopupViewControllerDelegate {
 
 extension MainViewController: MainViewModelDelegate {
     func reloadTableView() {
-        for i in 0..<tableView.visibleCells.count {
-            let indexPath = IndexPath(row: i, section: 0)
-            let cell = tableView.cellForRow(at: indexPath) as! MainTableViewCell
-            cell.configure(with: viewModel.cellLayoutItems[indexPath.row])
+        for cell in tableView.visibleCells {
+            guard let indexPath = tableView.indexPath(for: cell) else { continue }
+            let cell = cell as? MainCell
+            cell?.configure(with: viewModel.cellLayoutItems[indexPath.row])
         }
     }
 }
 
-extension MainViewController: MainTableViewCellDelegate {
-    func presentCopiedAlert(message: String) {
-        self.presentAlert(title: message, message: "", isUpgradeMessage: false)
-    }
-    
-    func updateInput(inputTextFieldText: String, separatedString: String) {
-        viewModel.update(
-            inputTextFieldText: inputTextFieldText,
-            separatedString: separatedString
+extension MainViewController: MainCellDelegate {
+    func didTapCopy(content: String) {
+        UIPasteboard.general.string = content
+        showMessageDialog(
+            title: "Success",
+            message: "Copied",
+            actionName: "Close",
+            action: nil
         )
     }
 }
@@ -160,16 +223,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             .dequeueReusableCell(
                 withIdentifier: cellId,
                 for: indexPath
-            ) as? MainTableViewCell else {
+            ) as? MainCell else {
                 return UITableViewCell()
         }
         cell.configure(with: viewModel.cellLayoutItems[indexPath.row])
         cell.delegate = self
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
     }
     
     private func createAndLoadBannerAds() -> GADBannerView {
@@ -183,35 +242,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension MainViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func presentAlert(title: String, message: String, isUpgradeMessage: Bool) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Done", style: .cancel, handler: {(action) in
-            self.setNeedsStatusBarAppearanceUpdate()
-        }))
-        
-        present(alert, animated: true, completion: nil)
-    }
-}
-
 extension MainViewController : GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("Banner loaded successfully")
         
-        // Reposition the banner ad to create a slide down effect
-        let translateTransform = CGAffineTransform(translationX: 0, y: -bannerView.bounds.size.height)
-        bannerView.transform = translateTransform
-        
-        UIView.animate(withDuration: 0.5) {
-            self.tableView.tableHeaderView?.frame = bannerView.frame
-            bannerView.transform = CGAffineTransform.identity
-            self.tableView.tableHeaderView = bannerView
-        }
+        stackView.insertArrangedSubview(bannerView, at: 0)
     }
     
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
