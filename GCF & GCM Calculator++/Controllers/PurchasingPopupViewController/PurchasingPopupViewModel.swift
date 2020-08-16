@@ -60,7 +60,9 @@ class PurchasingPopupViewModel: PurchasingPopupViewModelType {
     }
     
     func restorePurchasing() {
+        delegate?.showLoading()
         SwiftyStoreKit.restorePurchases(atomically: true) { [weak self] results in
+            self?.delegate?.hideLoading()
             if results.restoreFailedPurchases.count > 0 {
                 self?.delegate?.showMessageDialog(
                     title: "Failed",

@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared.enable = true
         
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        window?.rootViewController =
+            UINavigationController(rootViewController: MainViewController())
+        
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {
                 switch purchase.transaction.transactionState {
@@ -36,11 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        window?.rootViewController =
-            UINavigationController(rootViewController: MainViewController())
         
         if UserDefaults.standard.object(forKey: "isFirstRun") == nil {
             GlobalKeychain.clear(for: KeychainKey.isPurchased)
