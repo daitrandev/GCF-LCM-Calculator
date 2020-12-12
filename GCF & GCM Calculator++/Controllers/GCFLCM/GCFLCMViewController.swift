@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  GCFLCMViewController.swift
 //  GCF & GCM Calculator++
 //
 //  Created by Dai Tran on 10/30/17.
@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 import GoogleMobileAds
 
-class MainViewController: UIViewController {
+class GCFLCMViewController: UIViewController {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stackView: UIStackView!
@@ -27,9 +27,9 @@ class MainViewController: UIViewController {
     private var viewModel: MainViewModelType
     
     init() {
-        viewModel = MainViewModel()
+        viewModel = GCFLCMViewModel()
         super.init(
-            nibName: String(describing: MainViewController.self),
+            nibName: String(describing: GCFLCMViewController.self),
             bundle: .main
         )
     }
@@ -75,13 +75,17 @@ class MainViewController: UIViewController {
             }
         
         inputTextField.attributedPlaceholder = NSAttributedString(
-            string: "Numbers seperate by spaces or commas",
+            string: "Numbers seperate by spaces",
             attributes: [
                 NSAttributedString.Key.foregroundColor: UIColor.lightGray
             ]
         )
         inputTextField.delegate = self
-        inputTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+        inputTextField.addTarget(
+            self,
+            action: #selector(inputEditingChanged),
+            for: .editingChanged
+        )
         
         navigationController?.navigationBar.isTranslucent = false
                 
@@ -107,16 +111,16 @@ class MainViewController: UIViewController {
             navigationController?.navigationBar.barTintColor = .systemBackground
             navigationController?.navigationBar.titleTextAttributes = [
                 .foregroundColor: UIColor.label,
-                .font: UIFont(name: "Roboto-Bold", size: 18)!
+                .font: UIFont(name: "Roboto-Bold", size: 18) as Any
             ]
         } else {
             navigationController?.navigationBar.barTintColor = .white
             navigationController?.navigationBar.titleTextAttributes = [
                 .foregroundColor: UIColor.black,
-                .font: UIFont(name: "Roboto-Bold", size: 18)!
+                .font: UIFont(name: "Roboto-Bold", size: 18) as Any
             ]
         }
-        navigationController?.navigationBar.tintColor = UIColor.orange
+        navigationController?.navigationBar.tintColor = .orange
     }
     
     @objc private func didTapUnlock() {
@@ -130,60 +134,38 @@ class MainViewController: UIViewController {
         viewModel.clear()
     }
     
-    @objc func textFieldEditingChanged(_ sender: UITextField) {
-        if sender.text!.contains(",") {
-            viewModel.separator = ","
-        } else if sender.text!.contains(" ") {
-            viewModel.separator = " "
-        } else {
-            viewModel.separator = ""
-        }
+    @objc func inputEditingChanged(_ sender: UITextField) {
         viewModel.didChange(inputString: sender.text!)
     }
 }
 
-extension MainViewController: UITextFieldDelegate {
+extension GCFLCMViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
         if string.isEmpty {
             return true
         }
         
-        if let lastCharacter = textField.text!.last,
-            (String(lastCharacter) == " " || String(lastCharacter) == ",")
-                && (string == " " || string == ",") {
+        if let lastCharacter = textField.text?.last,
+            (string == " " && lastCharacter == " ") {
             return false
         }
         
-        if (string == " " && viewModel.separator == ",") {
+        if string != " " && string.first(where: { !$0.isNumber }) != nil {
             return false
-        }
-        
-        if (string == "," && viewModel.separator == " ") {
-            return false
-        }
-        
-        if (string == " " || string == ",") && viewModel.separator == "" {
-            return true
-        }
-        
-        if string != " " && string != "," {
-            for character in string {
-                if (!"0123456789".contains(character)) {
-                    return false
-                }
-            }
         }
         
         return true
     }
 }
 
-extension MainViewController: PurchasingPopupViewControllerDelegate {
+extension GCFLCMViewController: PurchasingPopupViewControllerDelegate {
     func removeAds() {
         bannerView?.removeFromSuperview()
         tableView.tableHeaderView = nil
@@ -191,7 +173,7 @@ extension MainViewController: PurchasingPopupViewControllerDelegate {
     }
 }
 
-extension MainViewController: MainViewModelDelegate {
+extension GCFLCMViewController: GCFLCMViewModelDelegate {
     func reloadTableView() {
         for cell in tableView.visibleCells {
             guard let indexPath = tableView.indexPath(for: cell) else { continue }
@@ -201,7 +183,7 @@ extension MainViewController: MainViewModelDelegate {
     }
 }
 
-extension MainViewController: MainCellDelegate {
+extension GCFLCMViewController: MainCellDelegate {
     func didTapCopy(content: String) {
         UIPasteboard.general.string = content
         showMessageDialog(
@@ -213,7 +195,7 @@ extension MainViewController: MainCellDelegate {
     }
 }
 
-extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+extension GCFLCMViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.cellLayoutItems.count
     }
@@ -242,7 +224,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension MainViewController : GADBannerViewDelegate {
+extension GCFLCMViewController : GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("Banner loaded successfully")
         
@@ -255,7 +237,7 @@ extension MainViewController : GADBannerViewDelegate {
     }
 }
 
-extension MainViewController : GADInterstitialDelegate {
+extension GCFLCMViewController : GADInterstitialDelegate {
     private func createAndLoadInterstitial() -> GADInterstitial? {
         let interstitial = GADInterstitial(adUnitID: interstialAdsUnitID)
         

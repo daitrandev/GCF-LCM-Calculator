@@ -21,11 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIFont.loadCustomFonts()
         
         IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         
         window = UIWindow()
         window?.makeKeyAndVisible()
         window?.rootViewController =
-            UINavigationController(rootViewController: MainViewController())
+            UINavigationController(rootViewController: GCFLCMViewController())
         
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {

@@ -10,7 +10,7 @@
 		232A8B5D1FA6C5E700A76143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232A8B5C1FA6C5E700A76143 /* Assets.xcassets */; };
 		232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */; };
 		D76E993A24DADCFD0005D424 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E993924DADCFD0005D424 /* UIView+Utils.swift */; };
-		D76E993E24DADE590005D424 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E993D24DADE590005D424 /* MainViewModel.swift */; };
+		D76E993E24DADE590005D424 /* GCFLCMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E993D24DADE590005D424 /* GCFLCMViewModel.swift */; };
 		D76E994424DAF3DD0005D424 /* PurchasingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E994124DAF3DD0005D424 /* PurchasingPopupViewController.swift */; };
 		D76E994524DAF3DD0005D424 /* PurchasingPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76E994224DAF3DD0005D424 /* PurchasingPopupViewController.xib */; };
 		D76E994624DAF3DD0005D424 /* PurchasingPopupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E994324DAF3DD0005D424 /* PurchasingPopupViewModel.swift */; };
@@ -21,7 +21,7 @@
 		D76E995224DAF5A80005D424 /* MessageDialogPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995024DAF5A80005D424 /* MessageDialogPresentable.swift */; };
 		D76E995424DAF6210005D424 /* GlobalKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995324DAF6210005D424 /* GlobalKeychain.swift */; };
 		D76E995724DAF6520005D424 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995624DAF6520005D424 /* KeychainKey.swift */; };
-		F83F02A124E7C41D007633FE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83F02A024E7C41D007633FE /* MainViewController.xib */; };
+		F83F02A124E7C41D007633FE /* GCFLCMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83F02A024E7C41D007633FE /* GCFLCMViewController.xib */; };
 		F83F02A424E7C626007633FE /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83F02A324E7C626007633FE /* MainCell.xib */; };
 		F83F02A624E7C62F007633FE /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83F02A524E7C62F007633FE /* MainCell.swift */; };
 		F83F02A824E7C868007633FE /* OutputOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83F02A724E7C868007633FE /* OutputOption.swift */; };
@@ -37,9 +37,9 @@
 		F84A5FE7258468D3002A2C9A /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FE1258468D3002A2C9A /* PromisesObjC.xcframework */; };
 		F84A5FE8258468D3002A2C9A /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FE2258468D3002A2C9A /* UserMessagingPlatform.xcframework */; };
 		FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */; };
-		FAB0CCBA223373CB00102A8F /* AdsUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCB9223373CB00102A8F /* AdsUnit.swift */; };
+		FAB0CCBA223373CB00102A8F /* AdsUnitID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCB9223373CB00102A8F /* AdsUnitID.swift */; };
 		FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B551FA6C5E700A76143 /* AppDelegate.swift */; };
-		FAB0CCBD2233772800102A8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B671FA6CA6200A76143 /* MainViewController.swift */; };
+		FAB0CCBD2233772800102A8F /* GCFLCMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B671FA6CA6200A76143 /* GCFLCMViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,10 +47,10 @@
 		232A8B551FA6C5E700A76143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		232A8B5C1FA6C5E700A76143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		232A8B611FA6C5E700A76143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		232A8B671FA6CA6200A76143 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		232A8B671FA6CA6200A76143 /* GCFLCMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCFLCMViewController.swift; sourceTree = "<group>"; };
 		232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorUtilities.swift; sourceTree = "<group>"; };
 		D76E993924DADCFD0005D424 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
-		D76E993D24DADE590005D424 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		D76E993D24DADE590005D424 /* GCFLCMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCFLCMViewModel.swift; sourceTree = "<group>"; };
 		D76E994124DAF3DD0005D424 /* PurchasingPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasingPopupViewController.swift; sourceTree = "<group>"; };
 		D76E994224DAF3DD0005D424 /* PurchasingPopupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchasingPopupViewController.xib; sourceTree = "<group>"; };
 		D76E994324DAF3DD0005D424 /* PurchasingPopupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasingPopupViewModel.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		D76E995024DAF5A80005D424 /* MessageDialogPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDialogPresentable.swift; sourceTree = "<group>"; };
 		D76E995324DAF6210005D424 /* GlobalKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalKeychain.swift; sourceTree = "<group>"; };
 		D76E995624DAF6520005D424 /* KeychainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
-		F83F02A024E7C41D007633FE /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		F83F02A024E7C41D007633FE /* GCFLCMViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCFLCMViewController.xib; sourceTree = "<group>"; };
 		F83F02A324E7C626007633FE /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
 		F83F02A524E7C62F007633FE /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		F83F02A724E7C868007633FE /* OutputOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputOption.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		F84A5FE1258468D3002A2C9A /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PromisesObjC.xcframework; path = "GCF & GCM Calculator++/Frameworks/PromisesObjC.xcframework"; sourceTree = "<group>"; };
 		F84A5FE2258468D3002A2C9A /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = UserMessagingPlatform.xcframework; path = "GCF & GCM Calculator++/Frameworks/UserMessagingPlatform.xcframework"; sourceTree = "<group>"; };
 		FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FAB0CCB9223373CB00102A8F /* AdsUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsUnit.swift; sourceTree = "<group>"; };
+		FAB0CCB9223373CB00102A8F /* AdsUnitID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsUnitID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +131,10 @@
 		232A8B541FA6C5E700A76143 /* GCF & GCM Calculator++ */ = {
 			isa = PBXGroup;
 			children = (
-				232A8B611FA6C5E700A76143 /* Info.plist */,
-				FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */,
-				FAB0CCB9223373CB00102A8F /* AdsUnit.swift */,
 				232A8B551FA6C5E700A76143 /* AppDelegate.swift */,
 				FAB0CCC22233DAF900102A8F /* Controllers */,
+				232A8B611FA6C5E700A76143 /* Info.plist */,
+				FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */,
 				D76E995524DAF6480005D424 /* Models */,
 				F8416BC424DB833F008267C6 /* Resources */,
 				D76E993724DADCE10005D424 /* Utils */,
@@ -180,19 +179,20 @@
 			path = NonUI;
 			sourceTree = "<group>";
 		};
-		D76E994024DAF3DD0005D424 /* PurchasingPopupViewController */ = {
+		D76E994024DAF3DD0005D424 /* PurchasingPopup */ = {
 			isa = PBXGroup;
 			children = (
 				D76E994124DAF3DD0005D424 /* PurchasingPopupViewController.swift */,
 				D76E994224DAF3DD0005D424 /* PurchasingPopupViewController.xib */,
 				D76E994324DAF3DD0005D424 /* PurchasingPopupViewModel.swift */,
 			);
-			path = PurchasingPopupViewController;
+			path = PurchasingPopup;
 			sourceTree = "<group>";
 		};
 		D76E995524DAF6480005D424 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAB0CCB9223373CB00102A8F /* AdsUnitID.swift */,
 				D76E995624DAF6520005D424 /* KeychainKey.swift */,
 				F83F02A724E7C868007633FE /* OutputOption.swift */,
 			);
@@ -228,22 +228,22 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		FA14C5852234C2090044A026 /* Main */ = {
+		FA14C5852234C2090044A026 /* GCFLCM */ = {
 			isa = PBXGroup;
 			children = (
 				F83F02A224E7C60C007633FE /* Cell */,
-				232A8B671FA6CA6200A76143 /* MainViewController.swift */,
-				D76E993D24DADE590005D424 /* MainViewModel.swift */,
-				F83F02A024E7C41D007633FE /* MainViewController.xib */,
+				232A8B671FA6CA6200A76143 /* GCFLCMViewController.swift */,
+				D76E993D24DADE590005D424 /* GCFLCMViewModel.swift */,
+				F83F02A024E7C41D007633FE /* GCFLCMViewController.xib */,
 			);
-			path = Main;
+			path = GCFLCM;
 			sourceTree = "<group>";
 		};
 		FAB0CCC22233DAF900102A8F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D76E994024DAF3DD0005D424 /* PurchasingPopupViewController */,
-				FA14C5852234C2090044A026 /* Main */,
+				D76E994024DAF3DD0005D424 /* PurchasingPopup */,
+				FA14C5852234C2090044A026 /* GCFLCM */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 				F8416BCC24DB8360008267C6 /* Roboto-Regular.ttf in Resources */,
 				F83F02A424E7C626007633FE /* MainCell.xib in Resources */,
 				F8416BCA24DB8360008267C6 /* Roboto-Medium.ttf in Resources */,
-				F83F02A124E7C41D007633FE /* MainViewController.xib in Resources */,
+				F83F02A124E7C41D007633FE /* GCFLCMViewController.xib in Resources */,
 				D76E994524DAF3DD0005D424 /* PurchasingPopupViewController.xib in Resources */,
 				F8416BCB24DB8360008267C6 /* Roboto-Light.ttf in Resources */,
 				FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */,
@@ -341,16 +341,16 @@
 				D76E995124DAF5A80005D424 /* HUDPresentable.swift in Sources */,
 				232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */,
 				D76E994E24DAF57D0005D424 /* LoadingButton.swift in Sources */,
-				FAB0CCBD2233772800102A8F /* MainViewController.swift in Sources */,
+				FAB0CCBD2233772800102A8F /* GCFLCMViewController.swift in Sources */,
 				D76E993A24DADCFD0005D424 /* UIView+Utils.swift in Sources */,
 				FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */,
 				D76E995224DAF5A80005D424 /* MessageDialogPresentable.swift in Sources */,
 				D76E995724DAF6520005D424 /* KeychainKey.swift in Sources */,
 				D76E994624DAF3DD0005D424 /* PurchasingPopupViewModel.swift in Sources */,
 				D76E994424DAF3DD0005D424 /* PurchasingPopupViewController.swift in Sources */,
-				FAB0CCBA223373CB00102A8F /* AdsUnit.swift in Sources */,
+				FAB0CCBA223373CB00102A8F /* AdsUnitID.swift in Sources */,
 				F83F02A624E7C62F007633FE /* MainCell.swift in Sources */,
-				D76E993E24DADE590005D424 /* MainViewModel.swift in Sources */,
+				D76E993E24DADE590005D424 /* GCFLCMViewModel.swift in Sources */,
 				F83F02A824E7C868007633FE /* OutputOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

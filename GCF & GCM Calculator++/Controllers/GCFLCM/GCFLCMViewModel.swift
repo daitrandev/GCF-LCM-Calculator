@@ -6,21 +6,20 @@
 //  Copyright © 2020 DaiTranDev. All rights reserved.
 //
 
-protocol MainViewModelDelegate: class, MessageDialogPresentable {
+protocol GCFLCMViewModelDelegate: class, MessageDialogPresentable {
     func reloadTableView()
 }
 
 protocol MainViewModelType {
     var inputText: String { get }
-    var separator: String { get set }
     var isPurchased: Bool { get }
-    var delegate: MainViewModelDelegate? { get set }
-    var cellLayoutItems: [MainViewModel.CellLayoutItem] { get }
+    var delegate: GCFLCMViewModelDelegate? { get set }
+    var cellLayoutItems: [GCFLCMViewModel.CellLayoutItem] { get }
     func clear()
     func didChange(inputString: String)
 }
 
-class MainViewModel: MainViewModelType {
+class GCFLCMViewModel: MainViewModelType {
     struct CellLayoutItem {
         let outputOption: OutputOption
         var content: String?
@@ -29,7 +28,7 @@ class MainViewModel: MainViewModelType {
     var inputText: String = "" {
         didSet {
             let inputNumbers = inputText
-                .components(separatedBy: separator)
+                .components(separatedBy: .whitespaces)
                 .filter { !$0.isEmpty }
             
             var cellLayoutItems = self.cellLayoutItems
@@ -47,9 +46,7 @@ class MainViewModel: MainViewModelType {
             self.cellLayoutItems = cellLayoutItems
         }
     }
-    
-    var separator: String = ""
-    
+        
     var cellLayoutItems: [CellLayoutItem] {
         didSet {
             delegate?.reloadTableView()
@@ -60,7 +57,7 @@ class MainViewModel: MainViewModelType {
         GlobalKeychain.getBool(for: KeychainKey.isPurchased) ?? false
     }
     
-    weak var delegate: MainViewModelDelegate?
+    weak var delegate: GCFLCMViewModelDelegate?
     
     init() {
         cellLayoutItems = [

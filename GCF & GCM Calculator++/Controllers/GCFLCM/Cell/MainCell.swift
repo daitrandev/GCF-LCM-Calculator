@@ -27,7 +27,7 @@ class MainCell: UITableViewCell {
         copyButton.addTarget(self, action: #selector(didTapCopy), for: .touchUpInside)
     }
     
-    func configure(with item: MainViewModel.CellLayoutItem) {
+    func configure(with item: GCFLCMViewModel.CellLayoutItem) {
         titleLabel.text = item.outputOption.rawValue
         textField.attributedPlaceholder = NSAttributedString(
             string: item.outputOption.description,
