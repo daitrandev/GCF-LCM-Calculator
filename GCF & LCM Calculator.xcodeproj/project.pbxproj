@@ -30,6 +30,12 @@
 		F8416BCC24DB8360008267C6 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8416BC824DB835F008267C6 /* Roboto-Regular.ttf */; };
 		F8416BCD24DB8360008267C6 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8416BC924DB835F008267C6 /* Roboto-Bold.ttf */; };
 		F8416BCF24DB83B8008267C6 /* UIFont+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8416BCE24DB83B8008267C6 /* UIFont+Utils.swift */; };
+		F84A5FE3258468D3002A2C9A /* GoogleUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FDD258468D3002A2C9A /* GoogleUtilities.xcframework */; };
+		F84A5FE4258468D3002A2C9A /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FDE258468D3002A2C9A /* GoogleAppMeasurement.framework */; };
+		F84A5FE5258468D3002A2C9A /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FDF258468D3002A2C9A /* GoogleMobileAds.xcframework */; };
+		F84A5FE6258468D3002A2C9A /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FE0258468D3002A2C9A /* nanopb.xcframework */; };
+		F84A5FE7258468D3002A2C9A /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FE1258468D3002A2C9A /* PromisesObjC.xcframework */; };
+		F84A5FE8258468D3002A2C9A /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FE2258468D3002A2C9A /* UserMessagingPlatform.xcframework */; };
 		FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */; };
 		FAB0CCBA223373CB00102A8F /* AdsUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCB9223373CB00102A8F /* AdsUnit.swift */; };
 		FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B551FA6C5E700A76143 /* AppDelegate.swift */; };
@@ -62,6 +68,12 @@
 		F8416BC824DB835F008267C6 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		F8416BC924DB835F008267C6 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		F8416BCE24DB83B8008267C6 /* UIFont+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Utils.swift"; sourceTree = "<group>"; };
+		F84A5FDD258468D3002A2C9A /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleUtilities.xcframework; path = "GCF & GCM Calculator++/Frameworks/GoogleUtilities.xcframework"; sourceTree = "<group>"; };
+		F84A5FDE258468D3002A2C9A /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = "GCF & GCM Calculator++/Frameworks/GoogleAppMeasurement.framework"; sourceTree = "<group>"; };
+		F84A5FDF258468D3002A2C9A /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "GCF & GCM Calculator++/Frameworks/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
+		F84A5FE0258468D3002A2C9A /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = nanopb.xcframework; path = "GCF & GCM Calculator++/Frameworks/nanopb.xcframework"; sourceTree = "<group>"; };
+		F84A5FE1258468D3002A2C9A /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PromisesObjC.xcframework; path = "GCF & GCM Calculator++/Frameworks/PromisesObjC.xcframework"; sourceTree = "<group>"; };
+		F84A5FE2258468D3002A2C9A /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = UserMessagingPlatform.xcframework; path = "GCF & GCM Calculator++/Frameworks/UserMessagingPlatform.xcframework"; sourceTree = "<group>"; };
 		FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB0CCB9223373CB00102A8F /* AdsUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsUnit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,19 +84,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76E994C24DAF50A0005D424 /* BuildFile in Frameworks */,
+				F84A5FE5258468D3002A2C9A /* GoogleMobileAds.xcframework in Frameworks */,
 				D76E994924DAF41B0005D424 /* BuildFile in Frameworks */,
+				F84A5FE4258468D3002A2C9A /* GoogleAppMeasurement.framework in Frameworks */,
+				F84A5FE3258468D3002A2C9A /* GoogleUtilities.xcframework in Frameworks */,
+				F84A5FE6258468D3002A2C9A /* nanopb.xcframework in Frameworks */,
+				F84A5FE8258468D3002A2C9A /* UserMessagingPlatform.xcframework in Frameworks */,
+				F84A5FE7258468D3002A2C9A /* PromisesObjC.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10DF2F37D4B8E865A93051F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F84A5FDE258468D3002A2C9A /* GoogleAppMeasurement.framework */,
+				F84A5FDF258468D3002A2C9A /* GoogleMobileAds.xcframework */,
+				F84A5FDD258468D3002A2C9A /* GoogleUtilities.xcframework */,
+				F84A5FE0258468D3002A2C9A /* nanopb.xcframework */,
+				F84A5FE1258468D3002A2C9A /* PromisesObjC.xcframework */,
+				F84A5FE2258468D3002A2C9A /* UserMessagingPlatform.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		232A8B491FA6C5E700A76143 = {
 			isa = PBXGroup;
 			children = (
 				232A8B541FA6C5E700A76143 /* GCF & GCM Calculator++ */,
 				232A8B531FA6C5E700A76143 /* Products */,
 				C822051CC48ECB8809DFA71C /* Pods */,
+				10DF2F37D4B8E865A93051F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -450,6 +482,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GCF\\ &\\ GCM\\ Calculator++/Frameworks",
 				);
 				INFOPLIST_FILE = "GCF & GCM Calculator++/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -474,6 +507,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/GCF\\ &\\ GCM\\ Calculator++/Frameworks",
 				);
 				INFOPLIST_FILE = "GCF & GCM Calculator++/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
