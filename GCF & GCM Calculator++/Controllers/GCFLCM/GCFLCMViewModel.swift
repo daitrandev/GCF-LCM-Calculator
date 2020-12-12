@@ -10,7 +10,7 @@ protocol GCFLCMViewModelDelegate: class, MessageDialogPresentable {
     func reloadTableView()
 }
 
-protocol MainViewModelType {
+protocol GCFLCMViewModelType: class {
     var inputText: String { get }
     var isPurchased: Bool { get }
     var delegate: GCFLCMViewModelDelegate? { get set }
@@ -19,7 +19,13 @@ protocol MainViewModelType {
     func didChange(inputString: String)
 }
 
-class GCFLCMViewModel: MainViewModelType {
+extension GCFLCMViewModelType {
+    var isPurchased: Bool {
+        GlobalKeychain.getBool(for: KeychainKey.isPurchased) ?? false
+    }
+}
+
+final class GCFLCMViewModel: GCFLCMViewModelType {
     struct CellLayoutItem {
         let outputOption: OutputOption
         var content: String?
@@ -51,10 +57,6 @@ class GCFLCMViewModel: MainViewModelType {
         didSet {
             delegate?.reloadTableView()
         }
-    }
-    
-    var isPurchased: Bool {
-        GlobalKeychain.getBool(for: KeychainKey.isPurchased) ?? false
     }
     
     weak var delegate: GCFLCMViewModelDelegate?

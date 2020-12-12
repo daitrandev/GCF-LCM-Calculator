@@ -22,8 +22,8 @@
 		D76E995424DAF6210005D424 /* GlobalKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995324DAF6210005D424 /* GlobalKeychain.swift */; };
 		D76E995724DAF6520005D424 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E995624DAF6520005D424 /* KeychainKey.swift */; };
 		F83F02A124E7C41D007633FE /* GCFLCMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83F02A024E7C41D007633FE /* GCFLCMViewController.xib */; };
-		F83F02A424E7C626007633FE /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83F02A324E7C626007633FE /* MainCell.xib */; };
-		F83F02A624E7C62F007633FE /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83F02A524E7C62F007633FE /* MainCell.swift */; };
+		F83F02A424E7C626007633FE /* OutputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F83F02A324E7C626007633FE /* OutputCell.xib */; };
+		F83F02A624E7C62F007633FE /* OutputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83F02A524E7C62F007633FE /* OutputCell.swift */; };
 		F83F02A824E7C868007633FE /* OutputOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83F02A724E7C868007633FE /* OutputOption.swift */; };
 		F8416BCA24DB8360008267C6 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8416BC624DB835F008267C6 /* Roboto-Medium.ttf */; };
 		F8416BCB24DB8360008267C6 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F8416BC724DB835F008267C6 /* Roboto-Light.ttf */; };
@@ -36,6 +36,11 @@
 		F84A5FE6258468D3002A2C9A /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FE0258468D3002A2C9A /* nanopb.xcframework */; };
 		F84A5FE7258468D3002A2C9A /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FE1258468D3002A2C9A /* PromisesObjC.xcframework */; };
 		F84A5FE8258468D3002A2C9A /* UserMessagingPlatform.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84A5FE2258468D3002A2C9A /* UserMessagingPlatform.xcframework */; };
+		F8EBC3122584A979007E9741 /* FactorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EBC3112584A979007E9741 /* FactorsViewController.swift */; };
+		F8EBC3162584A986007E9741 /* FactorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8EBC3152584A986007E9741 /* FactorsViewController.xib */; };
+		F8EBC31A2584AA08007E9741 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EBC3192584AA08007E9741 /* MainTabBarViewController.swift */; };
+		F8EBC31E2584ABAE007E9741 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EBC31D2584ABAE007E9741 /* BaseViewController.swift */; };
+		F8EBC3252584D675007E9741 /* FactorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EBC3242584D675007E9741 /* FactorsViewModel.swift */; };
 		FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */; };
 		FAB0CCBA223373CB00102A8F /* AdsUnitID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCB9223373CB00102A8F /* AdsUnitID.swift */; };
 		FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B551FA6C5E700A76143 /* AppDelegate.swift */; };
@@ -60,8 +65,8 @@
 		D76E995324DAF6210005D424 /* GlobalKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalKeychain.swift; sourceTree = "<group>"; };
 		D76E995624DAF6520005D424 /* KeychainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
 		F83F02A024E7C41D007633FE /* GCFLCMViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCFLCMViewController.xib; sourceTree = "<group>"; };
-		F83F02A324E7C626007633FE /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
-		F83F02A524E7C62F007633FE /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		F83F02A324E7C626007633FE /* OutputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutputCell.xib; sourceTree = "<group>"; };
+		F83F02A524E7C62F007633FE /* OutputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputCell.swift; sourceTree = "<group>"; };
 		F83F02A724E7C868007633FE /* OutputOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputOption.swift; sourceTree = "<group>"; };
 		F8416BC624DB835F008267C6 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		F8416BC724DB835F008267C6 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -74,6 +79,11 @@
 		F84A5FE0258468D3002A2C9A /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = nanopb.xcframework; path = "GCF & GCM Calculator++/Frameworks/nanopb.xcframework"; sourceTree = "<group>"; };
 		F84A5FE1258468D3002A2C9A /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PromisesObjC.xcframework; path = "GCF & GCM Calculator++/Frameworks/PromisesObjC.xcframework"; sourceTree = "<group>"; };
 		F84A5FE2258468D3002A2C9A /* UserMessagingPlatform.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = UserMessagingPlatform.xcframework; path = "GCF & GCM Calculator++/Frameworks/UserMessagingPlatform.xcframework"; sourceTree = "<group>"; };
+		F8EBC3112584A979007E9741 /* FactorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorsViewController.swift; sourceTree = "<group>"; };
+		F8EBC3152584A986007E9741 /* FactorsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FactorsViewController.xib; sourceTree = "<group>"; };
+		F8EBC3192584AA08007E9741 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		F8EBC31D2584ABAE007E9741 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F8EBC3242584D675007E9741 /* FactorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorsViewModel.swift; sourceTree = "<group>"; };
 		FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB0CCB9223373CB00102A8F /* AdsUnitID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsUnitID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,8 +212,8 @@
 		F83F02A224E7C60C007633FE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				F83F02A324E7C626007633FE /* MainCell.xib */,
-				F83F02A524E7C62F007633FE /* MainCell.swift */,
+				F83F02A324E7C626007633FE /* OutputCell.xib */,
+				F83F02A524E7C62F007633FE /* OutputCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -228,6 +238,32 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		F8EBC3102584A930007E9741 /* Factors */ = {
+			isa = PBXGroup;
+			children = (
+				F8EBC3112584A979007E9741 /* FactorsViewController.swift */,
+				F8EBC3152584A986007E9741 /* FactorsViewController.xib */,
+				F8EBC3242584D675007E9741 /* FactorsViewModel.swift */,
+			);
+			path = Factors;
+			sourceTree = "<group>";
+		};
+		F8EBC3182584A9EC007E9741 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F8EBC3192584AA08007E9741 /* MainTabBarViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F8EBC31C2584AB8F007E9741 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F8EBC31D2584ABAE007E9741 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		FA14C5852234C2090044A026 /* GCFLCM */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +278,9 @@
 		FAB0CCC22233DAF900102A8F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8EBC31C2584AB8F007E9741 /* Base */,
+				F8EBC3182584A9EC007E9741 /* Main */,
+				F8EBC3102584A930007E9741 /* Factors */,
 				D76E994024DAF3DD0005D424 /* PurchasingPopup */,
 				FA14C5852234C2090044A026 /* GCFLCM */,
 			);
@@ -319,11 +358,12 @@
 			files = (
 				F8416BCD24DB8360008267C6 /* Roboto-Bold.ttf in Resources */,
 				F8416BCC24DB8360008267C6 /* Roboto-Regular.ttf in Resources */,
-				F83F02A424E7C626007633FE /* MainCell.xib in Resources */,
+				F83F02A424E7C626007633FE /* OutputCell.xib in Resources */,
 				F8416BCA24DB8360008267C6 /* Roboto-Medium.ttf in Resources */,
 				F83F02A124E7C41D007633FE /* GCFLCMViewController.xib in Resources */,
 				D76E994524DAF3DD0005D424 /* PurchasingPopupViewController.xib in Resources */,
 				F8416BCB24DB8360008267C6 /* Roboto-Light.ttf in Resources */,
+				F8EBC3162584A986007E9741 /* FactorsViewController.xib in Resources */,
 				FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */,
 				232A8B5D1FA6C5E700A76143 /* Assets.xcassets in Resources */,
 			);
@@ -336,8 +376,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8EBC3122584A979007E9741 /* FactorsViewController.swift in Sources */,
 				D76E995424DAF6210005D424 /* GlobalKeychain.swift in Sources */,
 				F8416BCF24DB83B8008267C6 /* UIFont+Utils.swift in Sources */,
+				F8EBC31A2584AA08007E9741 /* MainTabBarViewController.swift in Sources */,
+				F8EBC31E2584ABAE007E9741 /* BaseViewController.swift in Sources */,
 				D76E995124DAF5A80005D424 /* HUDPresentable.swift in Sources */,
 				232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */,
 				D76E994E24DAF57D0005D424 /* LoadingButton.swift in Sources */,
@@ -349,9 +392,10 @@
 				D76E994624DAF3DD0005D424 /* PurchasingPopupViewModel.swift in Sources */,
 				D76E994424DAF3DD0005D424 /* PurchasingPopupViewController.swift in Sources */,
 				FAB0CCBA223373CB00102A8F /* AdsUnitID.swift in Sources */,
-				F83F02A624E7C62F007633FE /* MainCell.swift in Sources */,
+				F83F02A624E7C62F007633FE /* OutputCell.swift in Sources */,
 				D76E993E24DADE590005D424 /* GCFLCMViewModel.swift in Sources */,
 				F83F02A824E7C868007633FE /* OutputOption.swift in Sources */,
+				F8EBC3252584D675007E9741 /* FactorsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

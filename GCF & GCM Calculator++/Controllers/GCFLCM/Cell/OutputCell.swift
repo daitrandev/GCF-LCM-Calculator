@@ -1,5 +1,5 @@
 //
-//  MainCell.swift
+//  OutputCell.swift
 //  GCF & LCM Calculator
 //
 //  Created by DaiTran on 8/15/20.
@@ -8,23 +8,27 @@
 
 import UIKit
 
-protocol MainCellDelegate: class {
+protocol OutputCellDelegate: class {
     func didTapCopy(content: String)
 }
 
-class MainCell: UITableViewCell {
+class OutputCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var copyButton: UIButton!
     
-    weak var delegate: MainCellDelegate?
+    weak var delegate: OutputCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         textField.backgroundColor = .gray
         textField.isEnabled = false
         
-        copyButton.addTarget(self, action: #selector(didTapCopy), for: .touchUpInside)
+        copyButton.addTarget(
+            self,
+            action: #selector(didTapCopy),
+            for: .touchUpInside
+        )
     }
     
     func configure(with item: GCFLCMViewModel.CellLayoutItem) {
@@ -32,7 +36,7 @@ class MainCell: UITableViewCell {
         textField.attributedPlaceholder = NSAttributedString(
             string: item.outputOption.description,
             attributes: [
-                NSAttributedString.Key.foregroundColor: UIColor.lightGray
+                .foregroundColor: UIColor.lightGray
             ]
         )
         textField.text = item.content

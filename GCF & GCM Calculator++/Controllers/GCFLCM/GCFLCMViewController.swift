@@ -10,7 +10,14 @@ import UIKit
 import MessageUI
 import GoogleMobileAds
 
-class GCFLCMViewController: UIViewController {
+protocol GCFLCMInput: class {
+    var inputTextField: UITextField! { get set }
+    var tableView: UITableView! { get set }
+    var stackView: UIStackView! { get set }
+    var tableViewHeightConstraint: NSLayoutConstraint! { get set }
+}
+
+final class GCFLCMViewController: BaseViewController, GCFLCMInput {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stackView: UIStackView!
@@ -20,18 +27,11 @@ class GCFLCMViewController: UIViewController {
     
     private var contentSizeObserver: NSKeyValueObservation?
     
-    private var bannerView: GADBannerView?
+    private var viewModel: GCFLCMViewModelType
     
-    private var interstitial: GADInterstitial?
-    
-    private var viewModel: MainViewModelType
-    
-    init() {
+    override init() {
         viewModel = GCFLCMViewModel()
-        super.init(
-            nibName: String(describing: GCFLCMViewController.self),
-            bundle: .main
-        )
+        super.init()
     }
     
     required init?(coder: NSCoder) {
@@ -45,26 +45,22 @@ class GCFLCMViewController: UIViewController {
         
         setupViews()
         loadTheme()
-        setupAds()
         
-        title = "GCF & LCM Calculator"
+        if !viewModel.isPurchased {
+            setupAds()
+        }
+        
+        navigationItem.title = "GCF & LCM Calculator"
+        navigationController?.tabBarItem.title = "GCF & LCM"
     }
     
     deinit {
         contentSizeObserver?.invalidate()
     }
     
-    private func setupAds() {
-        if !viewModel.isPurchased {
-            bannerView = createAndLoadBannerAds()
-            
-            interstitial = createAndLoadInterstitial()
-        }
-    }
-    
     private func setupViews() {
         tableView.register(
-            UINib(nibName: String(describing: MainCell.self), bundle: .main),
+            UINib(nibName: String(describing: OutputCell.self), bundle: .main),
             forCellReuseIdentifier: cellId
         )
         tableView.dataSource = self
@@ -137,6 +133,12 @@ class GCFLCMViewController: UIViewController {
     @objc func inputEditingChanged(_ sender: UITextField) {
         viewModel.didChange(inputString: sender.text!)
     }
+    
+    override func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("Banner loaded successfully")
+        
+        stackView.insertArrangedSubview(bannerView, at: 0)
+    }
 }
 
 extension GCFLCMViewController: UITextFieldDelegate {
@@ -177,13 +179,13 @@ extension GCFLCMViewController: GCFLCMViewModelDelegate {
     func reloadTableView() {
         for cell in tableView.visibleCells {
             guard let indexPath = tableView.indexPath(for: cell) else { continue }
-            let cell = cell as? MainCell
+            let cell = cell as? OutputCell
             cell?.configure(with: viewModel.cellLayoutItems[indexPath.row])
         }
     }
 }
 
-extension GCFLCMViewController: MainCellDelegate {
+extension GCFLCMViewController: OutputCellDelegate {
     func didTapCopy(content: String) {
         UIPasteboard.general.string = content
         showMessageDialog(
@@ -205,50 +207,11 @@ extension GCFLCMViewController: UITableViewDataSource, UITableViewDelegate {
             .dequeueReusableCell(
                 withIdentifier: cellId,
                 for: indexPath
-            ) as? MainCell else {
+            ) as? OutputCell else {
                 return UITableViewCell()
         }
         cell.configure(with: viewModel.cellLayoutItems[indexPath.row])
         cell.delegate = self
         return cell
-    }
-    
-    private func createAndLoadBannerAds() -> GADBannerView {
-        let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        
-        bannerView.adUnitID = bannerAdsUnitID
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
-        return bannerView
-    }
-}
-
-extension GCFLCMViewController : GADBannerViewDelegate {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("Banner loaded successfully")
-        
-        stackView.insertArrangedSubview(bannerView, at: 0)
-    }
-    
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        print("Fail to receive ads")
-        print(error)
-    }
-}
-
-extension GCFLCMViewController : GADInterstitialDelegate {
-    private func createAndLoadInterstitial() -> GADInterstitial? {
-        let interstitial = GADInterstitial(adUnitID: interstialAdsUnitID)
-        
-        let request = GADRequest()
-        interstitial.load(request)
-        interstitial.delegate = self
-        
-        return interstitial
-    }
-    
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        ad.present(fromRootViewController: self)
     }
 }

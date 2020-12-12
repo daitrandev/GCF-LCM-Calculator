@@ -13,7 +13,7 @@ protocol PurchasingPopupViewControllerDelegate: class {
     func removeAds()
 }
 
-class PurchasingPopupViewController: UIViewController {
+final class PurchasingPopupViewController: BaseViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var donateLoadingButton: LoadingButton!
     @IBOutlet weak var restoreDonateButton: LoadingButton!
@@ -24,9 +24,9 @@ class PurchasingPopupViewController: UIViewController {
     
     weak var delegate: PurchasingPopupViewControllerDelegate?
     
-    init() {
+    override init() {
         viewModel = PurchasingPopupViewModel()
-        super.init(nibName: String(describing: type(of: self)), bundle: Bundle.main)
+        super.init()
         modalPresentationStyle = .overCurrentContext
     }
     

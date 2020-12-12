@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FactorsViewController" customModule="GCF___LCM_Calculator" customModuleProvider="target">
+            <connections>
+                <outlet property="inputTextField" destination="KBW-7w-RdI" id="hsK-kP-cLv"/>
+                <outlet property="stackView" destination="soJ-lp-3J2" id="Mlf-Gl-qh6"/>
+                <outlet property="view" destination="Oxt-pk-xvg" id="sC9-Ef-ngS"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Oxt-pk-xvg">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-dn-Qil">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-lp-3J2">
+                            <rect key="frame" x="10" y="10" width="394" height="325.5"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KV9-EI-oBH">
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="151.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inputs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jU-JJ-cqz">
+                                            <rect key="frame" x="16" y="8" width="90.5" height="63"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ju-15-dbn">
+                                            <rect key="frame" x="16" y="79" width="362" height="0.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="FRs-HR-4zx"/>
+                                            </constraints>
+                                        </view>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TEXT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KBW-7w-RdI">
+                                            <rect key="frame" x="10" y="99.5" width="374" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="qVa-hq-ppZ"/>
+                                            </constraints>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.98431372549999996" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="KBW-7w-RdI" firstAttribute="leading" secondItem="KV9-EI-oBH" secondAttribute="leading" constant="10" id="183-BJ-NrH"/>
+                                        <constraint firstAttribute="trailing" secondItem="0Ju-15-dbn" secondAttribute="trailing" constant="16" id="2DR-td-DaL"/>
+                                        <constraint firstAttribute="bottom" secondItem="KBW-7w-RdI" secondAttribute="bottom" constant="8" id="2Hc-w3-lgn"/>
+                                        <constraint firstItem="9jU-JJ-cqz" firstAttribute="leading" secondItem="KV9-EI-oBH" secondAttribute="leading" constant="16" id="AeL-lA-rJs"/>
+                                        <constraint firstItem="0Ju-15-dbn" firstAttribute="leading" secondItem="KV9-EI-oBH" secondAttribute="leading" constant="16" id="Pyj-Vj-TVv"/>
+                                        <constraint firstItem="9jU-JJ-cqz" firstAttribute="top" secondItem="KV9-EI-oBH" secondAttribute="top" constant="8" id="hrV-qV-W2c"/>
+                                        <constraint firstItem="0Ju-15-dbn" firstAttribute="top" secondItem="9jU-JJ-cqz" secondAttribute="bottom" constant="8" id="lPM-sn-877"/>
+                                        <constraint firstAttribute="trailing" secondItem="KBW-7w-RdI" secondAttribute="trailing" constant="10" id="qVA-xr-OiB"/>
+                                        <constraint firstItem="KBW-7w-RdI" firstAttribute="top" secondItem="0Ju-15-dbn" secondAttribute="bottom" constant="20" id="vg0-dZ-DDK"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EaA-rg-AvI">
+                                    <rect key="frame" x="0.0" y="161.5" width="394" height="164"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outputs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mm-o0-cls">
+                                            <rect key="frame" x="16" y="8" width="114" height="37.5"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdr-5P-YHx">
+                                            <rect key="frame" x="16" y="53.5" width="362" height="0.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="0.5" id="Lwz-Fr-l2I"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.98431372549999996" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="Wdr-5P-YHx" firstAttribute="leading" secondItem="EaA-rg-AvI" secondAttribute="leading" constant="16" id="G7f-pf-fEp"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wdr-5P-YHx" secondAttribute="trailing" constant="16" id="Hkh-n3-ODm"/>
+                                        <constraint firstItem="Wdr-5P-YHx" firstAttribute="top" secondItem="9Mm-o0-cls" secondAttribute="bottom" constant="8" id="WMb-fe-7zq"/>
+                                        <constraint firstItem="9Mm-o0-cls" firstAttribute="top" secondItem="EaA-rg-AvI" secondAttribute="top" constant="8" id="ZaS-kq-N3a"/>
+                                        <constraint firstItem="9Mm-o0-cls" firstAttribute="leading" secondItem="EaA-rg-AvI" secondAttribute="leading" constant="16" id="vuK-Hg-MDp"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="soJ-lp-3J2" secondAttribute="bottom" constant="10" id="8Dl-cU-Xzy"/>
+                        <constraint firstItem="soJ-lp-3J2" firstAttribute="top" secondItem="PLE-dn-Qil" secondAttribute="top" constant="10" id="9aJ-Cr-a7W"/>
+                        <constraint firstItem="soJ-lp-3J2" firstAttribute="leading" secondItem="PLE-dn-Qil" secondAttribute="leading" constant="10" id="F1w-W8-3HY"/>
+                        <constraint firstAttribute="trailing" secondItem="soJ-lp-3J2" secondAttribute="trailing" id="I9M-Yb-XOs"/>
+                        <constraint firstItem="soJ-lp-3J2" firstAttribute="centerX" secondItem="PLE-dn-Qil" secondAttribute="centerX" id="qKO-cv-gDs"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="9bN-bx-6Xu"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="9bN-bx-6Xu" firstAttribute="trailing" secondItem="PLE-dn-Qil" secondAttribute="trailing" id="FOF-iS-hrL"/>
+                <constraint firstItem="PLE-dn-Qil" firstAttribute="top" secondItem="9bN-bx-6Xu" secondAttribute="top" id="HSM-cn-yKh"/>
+                <constraint firstItem="PLE-dn-Qil" firstAttribute="leading" secondItem="9bN-bx-6Xu" secondAttribute="leading" id="gyW-jX-ogT"/>
+                <constraint firstItem="9bN-bx-6Xu" firstAttribute="bottom" secondItem="PLE-dn-Qil" secondAttribute="bottom" id="iMR-aE-3DM"/>
+            </constraints>
+            <point key="canvasLocation" x="155.07246376811597" y="164.73214285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
