@@ -20,6 +20,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FactorsViewController" customModule="GCF___LCM_Calculator" customModuleProvider="target">
             <connections>
                 <outlet property="inputTextField" destination="KBW-7w-RdI" id="hsK-kP-cLv"/>
+                <outlet property="outputTextView" destination="hqG-i4-jZZ" id="k2h-vA-1x1"/>
+                <outlet property="placeholderLabel" destination="V8D-VK-dcq" id="McC-Rj-9qa"/>
                 <outlet property="stackView" destination="soJ-lp-3J2" id="Mlf-Gl-qh6"/>
                 <outlet property="view" destination="Oxt-pk-xvg" id="sC9-Ef-ngS"/>
             </connections>
@@ -29,11 +31,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-dn-Qil">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-dn-Qil">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-lp-3J2">
-                            <rect key="frame" x="10" y="10" width="394" height="325.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-lp-3J2">
+                            <rect key="frame" x="10" y="10" width="394" height="339.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KV9-EI-oBH">
                                     <rect key="frame" x="0.0" y="0.0" width="394" height="151.5"/>
@@ -87,8 +89,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EaA-rg-AvI">
-                                    <rect key="frame" x="0.0" y="161.5" width="394" height="164"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaA-rg-AvI">
+                                    <rect key="frame" x="0.0" y="161.5" width="394" height="178"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outputs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mm-o0-cls">
                                             <rect key="frame" x="16" y="8" width="114" height="37.5"/>
@@ -103,14 +105,39 @@
                                                 <constraint firstAttribute="height" constant="0.5" id="Lwz-Fr-l2I"/>
                                             </constraints>
                                         </view>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hqG-i4-jZZ">
+                                            <rect key="frame" x="10" y="74" width="374" height="94"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Factors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8D-VK-dcq">
+                                            <rect key="frame" x="168.5" y="111" width="57" height="20"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.98431372549999996" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
+                                        <constraint firstItem="V8D-VK-dcq" firstAttribute="centerX" secondItem="hqG-i4-jZZ" secondAttribute="centerX" id="0ji-fH-voB"/>
+                                        <constraint firstItem="hqG-i4-jZZ" firstAttribute="top" secondItem="Wdr-5P-YHx" secondAttribute="bottom" constant="20" id="9dD-3U-oYx"/>
                                         <constraint firstItem="Wdr-5P-YHx" firstAttribute="leading" secondItem="EaA-rg-AvI" secondAttribute="leading" constant="16" id="G7f-pf-fEp"/>
                                         <constraint firstAttribute="trailing" secondItem="Wdr-5P-YHx" secondAttribute="trailing" constant="16" id="Hkh-n3-ODm"/>
+                                        <constraint firstAttribute="trailing" secondItem="hqG-i4-jZZ" secondAttribute="trailing" constant="10" id="Pb5-1F-aZd"/>
                                         <constraint firstItem="Wdr-5P-YHx" firstAttribute="top" secondItem="9Mm-o0-cls" secondAttribute="bottom" constant="8" id="WMb-fe-7zq"/>
                                         <constraint firstItem="9Mm-o0-cls" firstAttribute="top" secondItem="EaA-rg-AvI" secondAttribute="top" constant="8" id="ZaS-kq-N3a"/>
+                                        <constraint firstItem="hqG-i4-jZZ" firstAttribute="leading" secondItem="EaA-rg-AvI" secondAttribute="leading" constant="10" id="fFo-s3-d62"/>
+                                        <constraint firstItem="V8D-VK-dcq" firstAttribute="centerY" secondItem="hqG-i4-jZZ" secondAttribute="centerY" id="uOy-O8-IFK"/>
                                         <constraint firstItem="9Mm-o0-cls" firstAttribute="leading" secondItem="EaA-rg-AvI" secondAttribute="leading" constant="16" id="vuK-Hg-MDp"/>
+                                        <constraint firstAttribute="bottom" secondItem="hqG-i4-jZZ" secondAttribute="bottom" constant="10" id="xzN-3Z-9kt"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>

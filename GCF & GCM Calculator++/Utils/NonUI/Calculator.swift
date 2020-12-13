@@ -1,5 +1,5 @@
 //
-//  CalculatorUtilities.swift
+//  Calculator.swift
 //  GCF & GCM Calculator++
 //
 //  Created by Dai Tran on 10/30/17.
@@ -8,7 +8,30 @@
 
 import Foundation
 
-class CalculatorUtilities {
+final class Calculator {
+    static func factors(of n: UInt) -> [UInt] {
+        let sqrtn = Int(Double(n).squareRoot())
+        var factors: [UInt] = []
+        factors.reserveCapacity(2 * sqrtn)
+        
+        for index in 1...sqrtn {
+            if n % UInt(index) == 0 {
+                factors.append(UInt(index))
+            }
+        }
+        
+        var index = factors.count - 1
+        if factors[index] * factors[index] == n {
+            index -= 1
+        }
+        
+        while index >= 0 {
+            factors.append(n / factors[index])
+            index -= 1
+        }
+        
+        return factors
+    }
     
     static func GCF(number1: Int, number2: Int) -> Int {
         if (number1 == 0) {

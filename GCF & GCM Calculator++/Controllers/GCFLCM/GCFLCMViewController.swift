@@ -10,14 +10,7 @@ import UIKit
 import MessageUI
 import GoogleMobileAds
 
-protocol GCFLCMInput: class {
-    var inputTextField: UITextField! { get set }
-    var tableView: UITableView! { get set }
-    var stackView: UIStackView! { get set }
-    var tableViewHeightConstraint: NSLayoutConstraint! { get set }
-}
-
-final class GCFLCMViewController: BaseViewController, GCFLCMInput {
+final class GCFLCMViewController: BaseViewController {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stackView: UIStackView!
@@ -73,7 +66,7 @@ final class GCFLCMViewController: BaseViewController, GCFLCMInput {
         inputTextField.attributedPlaceholder = NSAttributedString(
             string: "Numbers seperate by spaces",
             attributes: [
-                NSAttributedString.Key.foregroundColor: UIColor.lightGray
+                .foregroundColor: UIColor.lightGray
             ]
         )
         inputTextField.delegate = self
@@ -197,7 +190,7 @@ extension GCFLCMViewController: OutputCellDelegate {
     }
 }
 
-extension GCFLCMViewController: UITableViewDataSource, UITableViewDelegate {
+extension GCFLCMViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.cellLayoutItems.count
     }

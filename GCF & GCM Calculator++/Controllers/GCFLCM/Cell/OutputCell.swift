@@ -21,7 +21,6 @@ class OutputCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        textField.backgroundColor = .gray
         textField.isEnabled = false
         
         copyButton.addTarget(

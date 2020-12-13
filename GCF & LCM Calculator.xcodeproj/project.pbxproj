@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		232A8B5D1FA6C5E700A76143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 232A8B5C1FA6C5E700A76143 /* Assets.xcassets */; };
-		232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */; };
+		232A8B6C1FA6CF7900A76143 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B6B1FA6CF7900A76143 /* Calculator.swift */; };
 		D76E993A24DADCFD0005D424 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E993924DADCFD0005D424 /* UIView+Utils.swift */; };
 		D76E993E24DADE590005D424 /* GCFLCMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E993D24DADE590005D424 /* GCFLCMViewModel.swift */; };
 		D76E994424DAF3DD0005D424 /* PurchasingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E994124DAF3DD0005D424 /* PurchasingPopupViewController.swift */; };
@@ -41,6 +41,7 @@
 		F8EBC31A2584AA08007E9741 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EBC3192584AA08007E9741 /* MainTabBarViewController.swift */; };
 		F8EBC31E2584ABAE007E9741 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EBC31D2584ABAE007E9741 /* BaseViewController.swift */; };
 		F8EBC3252584D675007E9741 /* FactorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EBC3242584D675007E9741 /* FactorsViewModel.swift */; };
+		F8EBC32E25860E0F007E9741 /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EBC32D25860E0F007E9741 /* Optional+Ext.swift */; };
 		FAB0CCB8223372CB00102A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */; };
 		FAB0CCBA223373CB00102A8F /* AdsUnitID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0CCB9223373CB00102A8F /* AdsUnitID.swift */; };
 		FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232A8B551FA6C5E700A76143 /* AppDelegate.swift */; };
@@ -53,7 +54,7 @@
 		232A8B5C1FA6C5E700A76143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		232A8B611FA6C5E700A76143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		232A8B671FA6CA6200A76143 /* GCFLCMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCFLCMViewController.swift; sourceTree = "<group>"; };
-		232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorUtilities.swift; sourceTree = "<group>"; };
+		232A8B6B1FA6CF7900A76143 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		D76E993924DADCFD0005D424 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		D76E993D24DADE590005D424 /* GCFLCMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCFLCMViewModel.swift; sourceTree = "<group>"; };
 		D76E994124DAF3DD0005D424 /* PurchasingPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchasingPopupViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		F8EBC3192584AA08007E9741 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		F8EBC31D2584ABAE007E9741 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F8EBC3242584D675007E9741 /* FactorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactorsViewModel.swift; sourceTree = "<group>"; };
+		F8EBC32D25860E0F007E9741 /* Optional+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
 		FAB0CCB7223372CB00102A8F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB0CCB9223373CB00102A8F /* AdsUnitID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsUnitID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,7 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				D76E995324DAF6210005D424 /* GlobalKeychain.swift */,
-				232A8B6B1FA6CF7900A76143 /* CalculatorUtilities.swift */,
+				232A8B6B1FA6CF7900A76143 /* Calculator.swift */,
+				F8EBC32D25860E0F007E9741 /* Optional+Ext.swift */,
 			);
 			path = NonUI;
 			sourceTree = "<group>";
@@ -382,11 +385,12 @@
 				F8EBC31A2584AA08007E9741 /* MainTabBarViewController.swift in Sources */,
 				F8EBC31E2584ABAE007E9741 /* BaseViewController.swift in Sources */,
 				D76E995124DAF5A80005D424 /* HUDPresentable.swift in Sources */,
-				232A8B6C1FA6CF7900A76143 /* CalculatorUtilities.swift in Sources */,
+				232A8B6C1FA6CF7900A76143 /* Calculator.swift in Sources */,
 				D76E994E24DAF57D0005D424 /* LoadingButton.swift in Sources */,
 				FAB0CCBD2233772800102A8F /* GCFLCMViewController.swift in Sources */,
 				D76E993A24DADCFD0005D424 /* UIView+Utils.swift in Sources */,
 				FAB0CCBC2233772600102A8F /* AppDelegate.swift in Sources */,
+				F8EBC32E25860E0F007E9741 /* Optional+Ext.swift in Sources */,
 				D76E995224DAF5A80005D424 /* MessageDialogPresentable.swift in Sources */,
 				D76E995724DAF6520005D424 /* KeychainKey.swift in Sources */,
 				D76E994624DAF3DD0005D424 /* PurchasingPopupViewModel.swift in Sources */,

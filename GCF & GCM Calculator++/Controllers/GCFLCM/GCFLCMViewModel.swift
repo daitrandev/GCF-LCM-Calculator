@@ -11,18 +11,12 @@ protocol GCFLCMViewModelDelegate: class, MessageDialogPresentable {
 }
 
 protocol GCFLCMViewModelType: class {
-    var inputText: String { get }
+    var input: String? { get }
     var isPurchased: Bool { get }
     var delegate: GCFLCMViewModelDelegate? { get set }
     var cellLayoutItems: [GCFLCMViewModel.CellLayoutItem] { get }
     func clear()
     func didChange(inputString: String)
-}
-
-extension GCFLCMViewModelType {
-    var isPurchased: Bool {
-        GlobalKeychain.getBool(for: KeychainKey.isPurchased) ?? false
-    }
 }
 
 final class GCFLCMViewModel: GCFLCMViewModelType {
@@ -31,25 +25,24 @@ final class GCFLCMViewModel: GCFLCMViewModelType {
         var content: String?
     }
     
-    var inputText: String = "" {
+    var input: String? {
         didSet {
-            let inputNumbers = inputText
-                .components(separatedBy: .whitespaces)
-                .filter { !$0.isEmpty }
-            
-            var cellLayoutItems = self.cellLayoutItems
-            if inputNumbers.count > 1 {
-                cellLayoutItems[0].content = CalculatorUtilities.GCF(stringNumbers: inputNumbers)
-                cellLayoutItems[1].content = CalculatorUtilities.LCM(stringNumbers: inputNumbers)
-            } else if inputNumbers.count > 0 {
-                cellLayoutItems[0].content = inputNumbers[0]
-                cellLayoutItems[1].content = inputNumbers[0]
-            } else {
+            guard let inputNumbers = input?
+                    .components(separatedBy: .whitespaces)
+                    .filter({ !$0.isEmpty }) else {
                 cellLayoutItems[0].content = nil
                 cellLayoutItems[1].content = nil
+                return
             }
             
-            self.cellLayoutItems = cellLayoutItems
+            if inputNumbers.count == 1 {
+                cellLayoutItems[0].content = inputNumbers[0]
+                cellLayoutItems[1].content = inputNumbers[0]
+                return
+            }
+            
+            cellLayoutItems[0].content = Calculator.GCF(stringNumbers: inputNumbers)
+            cellLayoutItems[1].content = Calculator.LCM(stringNumbers: inputNumbers)
         }
     }
         
@@ -57,6 +50,10 @@ final class GCFLCMViewModel: GCFLCMViewModelType {
         didSet {
             delegate?.reloadTableView()
         }
+    }
+    
+    var isPurchased: Bool {
+        GlobalKeychain.getBool(for: KeychainKey.isPurchased) ?? false
     }
     
     weak var delegate: GCFLCMViewModelDelegate?
@@ -69,10 +66,10 @@ final class GCFLCMViewModel: GCFLCMViewModelType {
     }
     
     func clear() {
-        inputText = ""
+        input = nil
     }
     
     func didChange(inputString: String) {
-        inputText = inputString
+        input = inputString
     }
 }
