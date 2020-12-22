@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 final class FactorsViewController: BaseViewController {
     @IBOutlet weak var inputTextField: UITextField!
@@ -23,6 +24,22 @@ final class FactorsViewController: BaseViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if viewModel.isPurchased {
+            removeAds()
+            
+            navigationItem.leftBarButtonItem = nil
+            return
+        }
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "unlock"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapUnlock)
+        )
     }
     
     override func viewDidLoad() {
@@ -53,12 +70,7 @@ final class FactorsViewController: BaseViewController {
         )
         
         if !viewModel.isPurchased {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(
-                image: UIImage(named: "unlock"),
-                style: .plain,
-                target: self,
-                action: #selector(didTapUnlock)
-            )
+            setupAds()
         }
         
         if #available(iOS 13, *) {
@@ -89,16 +101,34 @@ final class FactorsViewController: BaseViewController {
     }
     
     @objc private func didTapUnlock() {
+        configureTabbar(isHidden: true)
+        
         let vc = PurchasingPopupViewController()
         vc.delegate = self
-        present(vc, animated: true)
+        tabBarController?.present(vc, animated: true)
+    }
+    
+    override func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("Banner loaded successfully")
+        
+        stackView.insertArrangedSubview(bannerView, at: 0)
+    }
+    
+    override func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        // Do nothing
     }
 }
 
 extension FactorsViewController: PurchasingPopupViewControllerDelegate {
     func removeAds() {
+        configureTabbar(isHidden: false)
+        
         bannerView?.removeFromSuperview()
         navigationItem.leftBarButtonItem = nil
+    }
+    
+    func didDismiss() {
+        configureTabbar(isHidden: false)
     }
 }
 

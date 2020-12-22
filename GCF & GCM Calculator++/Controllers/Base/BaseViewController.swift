@@ -29,6 +29,16 @@ class BaseViewController: UIViewController {
         interstitial = createAndLoadInterstitial()
     }
     
+    func configureTabbar(isHidden: Bool) {
+        if isHidden {
+            tabBarController?.tabBar.layer.zPosition = -1
+            tabBarController?.tabBar.isUserInteractionEnabled = false
+            return
+        }
+        tabBarController?.tabBar.layer.zPosition = 0
+        tabBarController?.tabBar.isUserInteractionEnabled = true
+    }
+    
     private func createAndLoadBannerAds() -> GADBannerView {
         let bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         
