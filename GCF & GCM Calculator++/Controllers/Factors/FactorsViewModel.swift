@@ -6,7 +6,9 @@
 //  Copyright © 2020 DaiTranDev. All rights reserved.
 //
 
-protocol FactorsViewModelDelegate: class {
+import Foundation
+
+protocol FactorsViewModelDelegate: class, HUDPresentable {
     func update(output: String?)
 }
 
@@ -25,9 +27,29 @@ final class FactorsViewModel: FactorsViewModelType {
                 output = nil
                 return
             }
-            output = Calculator.factors(of: inputNumber)
-                .map { String($0) }
-                .joined(separator: " ")
+            
+            var positiveFactors: [UInt] = []
+            let group = DispatchGroup()
+            
+            delegate?.showLoading()
+            group.enter()
+            DispatchQueue.global(qos: .background).async {
+                positiveFactors = Calculator.factors(of: inputNumber)
+                group.leave()
+            }
+            
+            group.notify(queue: .main) {
+                self.delegate?.hideLoading()
+                
+                var output = positiveFactors
+                    .map { String($0) }
+                    .joined(separator: ", ")
+                output += "\n"
+                output += positiveFactors
+                    .map { String(format: "-%d", $0) }
+                    .joined(separator: ", ")
+                self.output = output
+            }
         }
     }
     

@@ -29,9 +29,9 @@ final class FactorsViewController: BaseViewController {
         super.viewDidLoad()
         
         viewModel.delegate = self
-                
+        
         inputTextField.attributedPlaceholder = NSAttributedString(
-            string: "Number to find factors",
+            string: "A positive number",
             attributes: [
                 .foregroundColor: UIColor.lightGray
             ]

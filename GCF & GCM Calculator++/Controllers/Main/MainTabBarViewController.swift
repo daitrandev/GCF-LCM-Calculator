@@ -15,9 +15,11 @@ final class MainTabBarViewController: UITabBarController {
         tabBar.tintColor = .orange
         
         let gcfLcmNav = UINavigationController(rootViewController: GCFLCMViewController())
+        gcfLcmNav.tabBarItem.image = UIImage(named: "intersection")
         gcfLcmNav.tabBarItem.title = "GCF & LCM"
         
         let factorsNav = UINavigationController(rootViewController: FactorsViewController())
+        factorsNav.tabBarItem.image = UIImage(named: "asterisk")
         factorsNav.tabBarItem.title = "Factors"
         
         viewControllers = [gcfLcmNav, factorsNav]
