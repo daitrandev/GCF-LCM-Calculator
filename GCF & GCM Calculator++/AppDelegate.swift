@@ -27,6 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = MainTabBarViewController()
         
+        if UserDefaults.standard.object(forKey: "isFirstRun") == nil {
+            GlobalKeychain.clear(for: KeychainKey.isPurchased)
+            
+            UserDefaults.standard.set(true, forKey: "isFirstRun")
+            UserDefaults.standard.synchronize()
+        }
+        
+        if let isPurchased = GlobalKeychain.getBool(for: KeychainKey.isPurchased), isPurchased {
+            return true
+        }
+        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {
                 switch purchase.transaction.transactionState {
@@ -41,19 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
-        
-        if UserDefaults.standard.object(forKey: "isFirstRun") == nil {
-            GlobalKeychain.clear(for: KeychainKey.isPurchased)
-            
-            UserDefaults.standard.set(true, forKey: "isFirstRun")
-            UserDefaults.standard.synchronize()
-        }
-        
-        if let isPurchased = GlobalKeychain.getBool(for: KeychainKey.isPurchased), isPurchased {
-            return true
-        }
-        
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         return true
     }
