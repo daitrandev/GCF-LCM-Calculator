@@ -11,6 +11,7 @@ import SwiftyStoreKit
 
 protocol PurchasingPopupViewControllerDelegate: class {
     func removeAds()
+    func didDismiss()
 }
 
 final class PurchasingPopupViewController: BaseViewController {
@@ -60,7 +61,9 @@ final class PurchasingPopupViewController: BaseViewController {
     }
     
     @objc private func didTapCancel() {
-        dismiss(animated: true)
+        dismiss(animated: true) {
+            self.delegate?.didDismiss()
+        }
     }
     
     @IBAction func didTapDonate() {

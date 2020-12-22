@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MessageUI
 import GoogleMobileAds
 
 final class GCFLCMViewController: BaseViewController {
@@ -29,6 +28,23 @@ final class GCFLCMViewController: BaseViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if viewModel.isPurchased {
+            removeAds()
+            
+            navigationItem.leftBarButtonItem = nil
+            return
+        }
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "unlock"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapUnlock)
+        )
     }
     
     override func viewDidLoad() {
@@ -84,15 +100,6 @@ final class GCFLCMViewController: BaseViewController {
             target: self,
             action: #selector(didTapRefresh)
         )
-        
-        if !viewModel.isPurchased {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(
-                image: UIImage(named: "unlock"),
-                style: .plain,
-                target: self,
-                action: #selector(didTapUnlock)
-            )
-        }
     }
     
     private func loadTheme() {
@@ -113,9 +120,11 @@ final class GCFLCMViewController: BaseViewController {
     }
     
     @objc private func didTapUnlock() {
+        configureTabbar(isHidden: true)
+        
         let vc = PurchasingPopupViewController()
         vc.delegate = self
-        present(vc, animated: true)
+        tabBarController?.present(vc, animated: true)
     }
     
     @objc private func didTapRefresh() {
@@ -162,9 +171,14 @@ extension GCFLCMViewController: UITextFieldDelegate {
 
 extension GCFLCMViewController: PurchasingPopupViewControllerDelegate {
     func removeAds() {
+        configureTabbar(isHidden: false)
+        
         bannerView?.removeFromSuperview()
-        tableView.tableHeaderView = nil
         navigationItem.leftBarButtonItem = nil
+    }
+    
+    func didDismiss() {
+        configureTabbar(isHidden: false)
     }
 }
 
